@@ -14,6 +14,7 @@
 		09A75C631F6B0235002472C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09A75C611F6B0235002472C7 /* LaunchScreen.storyboard */; };
 		09A75C6E1F6B0235002472C7 /* Matering_LanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A75C6D1F6B0235002472C7 /* Matering_LanguageTests.swift */; };
 		09A75C791F6B0236002472C7 /* Matering_LanguageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A75C781F6B0236002472C7 /* Matering_LanguageUITests.swift */; };
+		09CCCC021F6B0D3E00E0B9B1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09A75C861F6B02F7002472C7 /* GoogleService-Info.plist */; };
 		1B2571AA08E80DB2393D2467 /* Pods_Matering_LanguageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E957BC0F741C20F9DF9B35 /* Pods_Matering_LanguageTests.framework */; };
 		CD8F0C7A5ABF340D732DE84D /* Pods_Matering_LanguageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C6AA5294A4CE7A057C4E26 /* Pods_Matering_LanguageUITests.framework */; };
 		F1969EAB4CAB31502910748B /* Pods_Matering_Language.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60407C9AEC0274210E6FD538 /* Pods_Matering_Language.framework */; };
@@ -284,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09A75C631F6B0235002472C7 /* LaunchScreen.storyboard in Resources */,
+				09CCCC021F6B0D3E00E0B9B1 /* GoogleService-Info.plist in Resources */,
 				09A75C601F6B0235002472C7 /* Assets.xcassets in Resources */,
 				09A75C5E1F6B0235002472C7 /* Main.storyboard in Resources */,
 			);
