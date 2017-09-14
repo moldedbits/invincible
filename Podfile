@@ -1,21 +1,20 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '9.0'
 
-target 'Matering Language' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+target 'Mastering Language' do
   use_frameworks!
 
-  # Pods for Matering Language
+  # Pods for Mastering Language
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
   pod 'GoogleSignIn'
 
-  target 'Matering LanguageTests' do
+  target 'Mastering LanguageTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-  target 'Matering LanguageUITests' do
+  target 'Mastering LanguageUITests' do
     inherit! :search_paths
     # Pods for testing
   end

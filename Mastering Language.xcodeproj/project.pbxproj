@@ -11,18 +11,21 @@
 		09A75C5E1F6B0235002472C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09A75C5C1F6B0235002472C7 /* Main.storyboard */; };
 		09A75C601F6B0235002472C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09A75C5F1F6B0235002472C7 /* Assets.xcassets */; };
 		09A75C631F6B0235002472C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09A75C611F6B0235002472C7 /* LaunchScreen.storyboard */; };
-		09A75C6E1F6B0235002472C7 /* Matering_LanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A75C6D1F6B0235002472C7 /* Matering_LanguageTests.swift */; };
-		09A75C791F6B0236002472C7 /* Matering_LanguageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A75C781F6B0236002472C7 /* Matering_LanguageUITests.swift */; };
+		09A75C6E1F6B0235002472C7 /* Mastering_LanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A75C6D1F6B0235002472C7 /* Mastering_LanguageTests.swift */; };
+		09A75C791F6B0236002472C7 /* Mastering_LanguageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A75C781F6B0236002472C7 /* Mastering_LanguageUITests.swift */; };
 		09CCCC021F6B0D3E00E0B9B1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09A75C861F6B02F7002472C7 /* GoogleService-Info.plist */; };
 		09CCCC061F6B12E800E0B9B1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CCCC041F6B12E800E0B9B1 /* LoginViewController.swift */; };
 		09CCCC071F6B12E800E0B9B1 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09CCCC051F6B12E800E0B9B1 /* LoginViewController.xib */; };
+		09CCCC0A1F6B1E1D00E0B9B1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CCCC091F6B1E1D00E0B9B1 /* DataManager.swift */; };
 		1B2571AA08E80DB2393D2467 /* Pods_Matering_LanguageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E957BC0F741C20F9DF9B35 /* Pods_Matering_LanguageTests.framework */; };
 		1C90BE061F6B104600E85221 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C90BE051F6B104600E85221 /* Coordinator.swift */; };
 		1C90BE081F6B10E200E85221 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C90BE071F6B10E200E85221 /* AppCoordinator.swift */; };
 		1C90BE111F6B1A5300E85221 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C90BE0F1F6B1A5300E85221 /* CategoriesViewController.swift */; };
 		1C90BE121F6B1A5300E85221 /* CategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C90BE101F6B1A5300E85221 /* CategoriesViewController.xib */; };
+		5E1287C31520046B624D81E0 /* Pods_Mastering_Language.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A10AB93C9FE6C6CCED49CFC /* Pods_Mastering_Language.framework */; };
+		7F6BEC853D6899FF7D2CF9CE /* Pods_Mastering_LanguageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6333FF9B5D0A5939F73800A9 /* Pods_Mastering_LanguageTests.framework */; };
 		CD8F0C7A5ABF340D732DE84D /* Pods_Matering_LanguageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C6AA5294A4CE7A057C4E26 /* Pods_Matering_LanguageUITests.framework */; };
-		F1969EAB4CAB31502910748B /* Pods_Matering_Language.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60407C9AEC0274210E6FD538 /* Pods_Matering_Language.framework */; };
+		DDF291987C9AA363B09B2520 /* Pods_Mastering_LanguageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0595A2616DA0C1A2BD2080C /* Pods_Mastering_LanguageUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,22 +46,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		09A75C551F6B0235002472C7 /* Matering Language.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Matering Language.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		09A75C551F6B0235002472C7 /* Mastering Language.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mastering Language.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09A75C581F6B0235002472C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09A75C5D1F6B0235002472C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		09A75C5F1F6B0235002472C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09A75C621F6B0235002472C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09A75C641F6B0235002472C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		09A75C691F6B0235002472C7 /* Matering LanguageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Matering LanguageTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		09A75C6D1F6B0235002472C7 /* Matering_LanguageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matering_LanguageTests.swift; sourceTree = "<group>"; };
+		09A75C691F6B0235002472C7 /* Mastering LanguageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mastering LanguageTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		09A75C6D1F6B0235002472C7 /* Mastering_LanguageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mastering_LanguageTests.swift; sourceTree = "<group>"; };
 		09A75C6F1F6B0235002472C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		09A75C741F6B0235002472C7 /* Matering LanguageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Matering LanguageUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		09A75C781F6B0236002472C7 /* Matering_LanguageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matering_LanguageUITests.swift; sourceTree = "<group>"; };
+		09A75C741F6B0235002472C7 /* Mastering LanguageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mastering LanguageUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		09A75C781F6B0236002472C7 /* Mastering_LanguageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mastering_LanguageUITests.swift; sourceTree = "<group>"; };
 		09A75C7A1F6B0236002472C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09A75C861F6B02F7002472C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		09C6AA5294A4CE7A057C4E26 /* Pods_Matering_LanguageUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Matering_LanguageUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		09CCCC041F6B12E800E0B9B1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		09CCCC051F6B12E800E0B9B1 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		09CCCC091F6B1E1D00E0B9B1 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		1C90BE051F6B104600E85221 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		1C90BE071F6B10E200E85221 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		1C90BE0F1F6B1A5300E85221 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
@@ -67,10 +71,19 @@
 		2468D049C097B22F3F77C27D /* Pods-Matering LanguageUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Matering LanguageUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Matering LanguageUITests/Pods-Matering LanguageUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3302E9617BCB5F1222376D40 /* Pods-Matering LanguageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Matering LanguageTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Matering LanguageTests/Pods-Matering LanguageTests.debug.xcconfig"; sourceTree = "<group>"; };
 		60407C9AEC0274210E6FD538 /* Pods_Matering_Language.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Matering_Language.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6333FF9B5D0A5939F73800A9 /* Pods_Mastering_LanguageTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mastering_LanguageTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AAF3AAB51E298231F433775 /* Pods-Matering LanguageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Matering LanguageUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Matering LanguageUITests/Pods-Matering LanguageUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8056E3ADDC3C157D224F9AF3 /* Pods-Matering LanguageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Matering LanguageTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Matering LanguageTests/Pods-Matering LanguageTests.release.xcconfig"; sourceTree = "<group>"; };
+		92CAA480FA0BA56E4593851B /* Pods-Mastering LanguageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mastering LanguageTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mastering LanguageTests/Pods-Mastering LanguageTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9A10AB93C9FE6C6CCED49CFC /* Pods_Mastering_Language.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mastering_Language.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8138AEE3D7BC9A7ADC0B4B /* Pods-Matering Language.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Matering Language.release.xcconfig"; path = "Pods/Target Support Files/Pods-Matering Language/Pods-Matering Language.release.xcconfig"; sourceTree = "<group>"; };
+		B1557B68B06F0A6DF91435E3 /* Pods-Mastering Language.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mastering Language.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mastering Language/Pods-Mastering Language.release.xcconfig"; sourceTree = "<group>"; };
+		C16BCD8941D632C973679B64 /* Pods-Mastering LanguageUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mastering LanguageUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mastering LanguageUITests/Pods-Mastering LanguageUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E0595A2616DA0C1A2BD2080C /* Pods_Mastering_LanguageUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mastering_LanguageUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA4DEDBEF04476260A79544B /* Pods-Mastering LanguageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mastering LanguageTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mastering LanguageTests/Pods-Mastering LanguageTests.release.xcconfig"; sourceTree = "<group>"; };
 		F6AECF5503240D2A2728733A /* Pods-Matering Language.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Matering Language.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Matering Language/Pods-Matering Language.debug.xcconfig"; sourceTree = "<group>"; };
+		F8381145B457436508C51E8B /* Pods-Mastering Language.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mastering Language.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mastering Language/Pods-Mastering Language.debug.xcconfig"; sourceTree = "<group>"; };
+		FDC0867932B8988D97C2B1D3 /* Pods-Mastering LanguageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mastering LanguageUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mastering LanguageUITests/Pods-Mastering LanguageUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1969EAB4CAB31502910748B /* Pods_Matering_Language.framework in Frameworks */,
+				5E1287C31520046B624D81E0 /* Pods_Mastering_Language.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +100,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B2571AA08E80DB2393D2467 /* Pods_Matering_LanguageTests.framework in Frameworks */,
+				7F6BEC853D6899FF7D2CF9CE /* Pods_Mastering_LanguageTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +109,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD8F0C7A5ABF340D732DE84D /* Pods_Matering_LanguageUITests.framework in Frameworks */,
+				DDF291987C9AA363B09B2520 /* Pods_Mastering_LanguageUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,9 +119,9 @@
 		09A75C4C1F6B0235002472C7 = {
 			isa = PBXGroup;
 			children = (
-				09A75C571F6B0235002472C7 /* Matering Language */,
-				09A75C6C1F6B0235002472C7 /* Matering LanguageTests */,
-				09A75C771F6B0236002472C7 /* Matering LanguageUITests */,
+				09A75C571F6B0235002472C7 /* Mastering Language */,
+				09A75C6C1F6B0235002472C7 /* Mastering LanguageTests */,
+				09A75C771F6B0236002472C7 /* Mastering LanguageUITests */,
 				09A75C561F6B0235002472C7 /* Products */,
 				9A51BFC9E439820B8296E940 /* Pods */,
 				A48F58680E9C2978B0D96DCC /* Frameworks */,
@@ -116,16 +131,17 @@
 		09A75C561F6B0235002472C7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				09A75C551F6B0235002472C7 /* Matering Language.app */,
-				09A75C691F6B0235002472C7 /* Matering LanguageTests.xctest */,
-				09A75C741F6B0235002472C7 /* Matering LanguageUITests.xctest */,
+				09A75C551F6B0235002472C7 /* Mastering Language.app */,
+				09A75C691F6B0235002472C7 /* Mastering LanguageTests.xctest */,
+				09A75C741F6B0235002472C7 /* Mastering LanguageUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		09A75C571F6B0235002472C7 /* Matering Language */ = {
+		09A75C571F6B0235002472C7 /* Mastering Language */ = {
 			isa = PBXGroup;
 			children = (
+				09CCCC081F6B1E0000E0B9B1 /* Storage */,
 				09CCCC031F6B12AD00E0B9B1 /* ViewControllers */,
 				1C90BE041F6B0FE400E85221 /* Coordinators */,
 				09A75C581F6B0235002472C7 /* AppDelegate.swift */,
@@ -135,25 +151,25 @@
 				09A75C641F6B0235002472C7 /* Info.plist */,
 				09A75C861F6B02F7002472C7 /* GoogleService-Info.plist */,
 			);
-			path = "Matering Language";
+			path = "Mastering Language";
 			sourceTree = "<group>";
 		};
-		09A75C6C1F6B0235002472C7 /* Matering LanguageTests */ = {
+		09A75C6C1F6B0235002472C7 /* Mastering LanguageTests */ = {
 			isa = PBXGroup;
 			children = (
-				09A75C6D1F6B0235002472C7 /* Matering_LanguageTests.swift */,
+				09A75C6D1F6B0235002472C7 /* Mastering_LanguageTests.swift */,
 				09A75C6F1F6B0235002472C7 /* Info.plist */,
 			);
-			path = "Matering LanguageTests";
+			path = "Mastering LanguageTests";
 			sourceTree = "<group>";
 		};
-		09A75C771F6B0236002472C7 /* Matering LanguageUITests */ = {
+		09A75C771F6B0236002472C7 /* Mastering LanguageUITests */ = {
 			isa = PBXGroup;
 			children = (
-				09A75C781F6B0236002472C7 /* Matering_LanguageUITests.swift */,
+				09A75C781F6B0236002472C7 /* Mastering_LanguageUITests.swift */,
 				09A75C7A1F6B0236002472C7 /* Info.plist */,
 			);
-			path = "Matering LanguageUITests";
+			path = "Mastering LanguageUITests";
 			sourceTree = "<group>";
 		};
 		09CCCC031F6B12AD00E0B9B1 /* ViewControllers */ = {
@@ -165,6 +181,14 @@
 				1C90BE101F6B1A5300E85221 /* CategoriesViewController.xib */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		09CCCC081F6B1E0000E0B9B1 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				09CCCC091F6B1E1D00E0B9B1 /* DataManager.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		1C90BE041F6B0FE400E85221 /* Coordinators */ = {
@@ -185,6 +209,12 @@
 				8056E3ADDC3C157D224F9AF3 /* Pods-Matering LanguageTests.release.xcconfig */,
 				7AAF3AAB51E298231F433775 /* Pods-Matering LanguageUITests.debug.xcconfig */,
 				2468D049C097B22F3F77C27D /* Pods-Matering LanguageUITests.release.xcconfig */,
+				F8381145B457436508C51E8B /* Pods-Mastering Language.debug.xcconfig */,
+				B1557B68B06F0A6DF91435E3 /* Pods-Mastering Language.release.xcconfig */,
+				92CAA480FA0BA56E4593851B /* Pods-Mastering LanguageTests.debug.xcconfig */,
+				EA4DEDBEF04476260A79544B /* Pods-Mastering LanguageTests.release.xcconfig */,
+				FDC0867932B8988D97C2B1D3 /* Pods-Mastering LanguageUITests.debug.xcconfig */,
+				C16BCD8941D632C973679B64 /* Pods-Mastering LanguageUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -195,6 +225,9 @@
 				60407C9AEC0274210E6FD538 /* Pods_Matering_Language.framework */,
 				22E957BC0F741C20F9DF9B35 /* Pods_Matering_LanguageTests.framework */,
 				09C6AA5294A4CE7A057C4E26 /* Pods_Matering_LanguageUITests.framework */,
+				9A10AB93C9FE6C6CCED49CFC /* Pods_Mastering_Language.framework */,
+				6333FF9B5D0A5939F73800A9 /* Pods_Mastering_LanguageTests.framework */,
+				E0595A2616DA0C1A2BD2080C /* Pods_Mastering_LanguageUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -202,9 +235,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		09A75C541F6B0235002472C7 /* Matering Language */ = {
+		09A75C541F6B0235002472C7 /* Mastering Language */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 09A75C7D1F6B0236002472C7 /* Build configuration list for PBXNativeTarget "Matering Language" */;
+			buildConfigurationList = 09A75C7D1F6B0236002472C7 /* Build configuration list for PBXNativeTarget "Mastering Language" */;
 			buildPhases = (
 				3A0A0197AD0B9FE4946A031C /* [CP] Check Pods Manifest.lock */,
 				09A75C511F6B0235002472C7 /* Sources */,
@@ -217,14 +250,14 @@
 			);
 			dependencies = (
 			);
-			name = "Matering Language";
+			name = "Mastering Language";
 			productName = "Matering Language";
-			productReference = 09A75C551F6B0235002472C7 /* Matering Language.app */;
+			productReference = 09A75C551F6B0235002472C7 /* Mastering Language.app */;
 			productType = "com.apple.product-type.application";
 		};
-		09A75C681F6B0235002472C7 /* Matering LanguageTests */ = {
+		09A75C681F6B0235002472C7 /* Mastering LanguageTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 09A75C801F6B0236002472C7 /* Build configuration list for PBXNativeTarget "Matering LanguageTests" */;
+			buildConfigurationList = 09A75C801F6B0236002472C7 /* Build configuration list for PBXNativeTarget "Mastering LanguageTests" */;
 			buildPhases = (
 				A5279CFA408C430DC19762A5 /* [CP] Check Pods Manifest.lock */,
 				09A75C651F6B0235002472C7 /* Sources */,
@@ -238,14 +271,14 @@
 			dependencies = (
 				09A75C6B1F6B0235002472C7 /* PBXTargetDependency */,
 			);
-			name = "Matering LanguageTests";
+			name = "Mastering LanguageTests";
 			productName = "Matering LanguageTests";
-			productReference = 09A75C691F6B0235002472C7 /* Matering LanguageTests.xctest */;
+			productReference = 09A75C691F6B0235002472C7 /* Mastering LanguageTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		09A75C731F6B0235002472C7 /* Matering LanguageUITests */ = {
+		09A75C731F6B0235002472C7 /* Mastering LanguageUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 09A75C831F6B0236002472C7 /* Build configuration list for PBXNativeTarget "Matering LanguageUITests" */;
+			buildConfigurationList = 09A75C831F6B0236002472C7 /* Build configuration list for PBXNativeTarget "Mastering LanguageUITests" */;
 			buildPhases = (
 				A303919B7926CA157BD30ADA /* [CP] Check Pods Manifest.lock */,
 				09A75C701F6B0235002472C7 /* Sources */,
@@ -259,9 +292,9 @@
 			dependencies = (
 				09A75C761F6B0235002472C7 /* PBXTargetDependency */,
 			);
-			name = "Matering LanguageUITests";
+			name = "Mastering LanguageUITests";
 			productName = "Matering LanguageUITests";
-			productReference = 09A75C741F6B0235002472C7 /* Matering LanguageUITests.xctest */;
+			productReference = 09A75C741F6B0235002472C7 /* Mastering LanguageUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -290,7 +323,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 09A75C501F6B0235002472C7 /* Build configuration list for PBXProject "Matering Language" */;
+			buildConfigurationList = 09A75C501F6B0235002472C7 /* Build configuration list for PBXProject "Mastering Language" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -303,9 +336,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				09A75C541F6B0235002472C7 /* Matering Language */,
-				09A75C681F6B0235002472C7 /* Matering LanguageTests */,
-				09A75C731F6B0235002472C7 /* Matering LanguageUITests */,
+				09A75C541F6B0235002472C7 /* Mastering Language */,
+				09A75C681F6B0235002472C7 /* Mastering LanguageTests */,
+				09A75C731F6B0235002472C7 /* Mastering LanguageUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -353,7 +386,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Matering LanguageUITests/Pods-Matering LanguageUITests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mastering LanguageUITests/Pods-Mastering LanguageUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3A0A0197AD0B9FE4946A031C /* [CP] Check Pods Manifest.lock */ = {
@@ -367,7 +400,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Matering Language-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Mastering Language-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -386,7 +419,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Matering LanguageTests/Pods-Matering LanguageTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mastering LanguageTests/Pods-Mastering LanguageTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5B1D515FC6AF486E07FD3194 /* [CP] Embed Pods Frameworks */ = {
@@ -401,7 +434,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Matering LanguageTests/Pods-Matering LanguageTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mastering LanguageTests/Pods-Mastering LanguageTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A303919B7926CA157BD30ADA /* [CP] Check Pods Manifest.lock */ = {
@@ -415,7 +448,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Matering LanguageUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Mastering LanguageUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -433,7 +466,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Matering LanguageTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Mastering LanguageTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -452,7 +485,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Matering LanguageUITests/Pods-Matering LanguageUITests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mastering LanguageUITests/Pods-Mastering LanguageUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C83D6345B5B5E120790C00D0 /* [CP] Copy Pods Resources */ = {
@@ -461,7 +494,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Matering Language/Pods-Matering Language-resources.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Mastering Language/Pods-Mastering Language-resources.sh",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -470,7 +503,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Matering Language/Pods-Matering Language-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mastering Language/Pods-Mastering Language-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F97B3807E84377BCF1C3F3DF /* [CP] Embed Pods Frameworks */ = {
@@ -479,10 +512,11 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Matering Language/Pods-Matering Language-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Mastering Language/Pods-Mastering Language-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -490,11 +524,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Matering Language/Pods-Matering Language-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mastering Language/Pods-Mastering Language-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -506,6 +541,7 @@
 			files = (
 				09CCCC061F6B12E800E0B9B1 /* LoginViewController.swift in Sources */,
 				1C90BE081F6B10E200E85221 /* AppCoordinator.swift in Sources */,
+				09CCCC0A1F6B1E1D00E0B9B1 /* DataManager.swift in Sources */,
 				09A75C591F6B0235002472C7 /* AppDelegate.swift in Sources */,
 				1C90BE061F6B104600E85221 /* Coordinator.swift in Sources */,
 				1C90BE111F6B1A5300E85221 /* CategoriesViewController.swift in Sources */,
@@ -516,7 +552,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09A75C6E1F6B0235002472C7 /* Matering_LanguageTests.swift in Sources */,
+				09A75C6E1F6B0235002472C7 /* Mastering_LanguageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,7 +560,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09A75C791F6B0236002472C7 /* Matering_LanguageUITests.swift in Sources */,
+				09A75C791F6B0236002472C7 /* Mastering_LanguageUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,12 +569,12 @@
 /* Begin PBXTargetDependency section */
 		09A75C6B1F6B0235002472C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 09A75C541F6B0235002472C7 /* Matering Language */;
+			target = 09A75C541F6B0235002472C7 /* Mastering Language */;
 			targetProxy = 09A75C6A1F6B0235002472C7 /* PBXContainerItemProxy */;
 		};
 		09A75C761F6B0235002472C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 09A75C541F6B0235002472C7 /* Matering Language */;
+			target = 09A75C541F6B0235002472C7 /* Mastering Language */;
 			targetProxy = 09A75C751F6B0235002472C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -672,12 +708,12 @@
 		};
 		09A75C7E1F6B0236002472C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F6AECF5503240D2A2728733A /* Pods-Matering Language.debug.xcconfig */;
+			baseConfigurationReference = F8381145B457436508C51E8B /* Pods-Mastering Language.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = DHG6J45BG4;
-				INFOPLIST_FILE = "Matering Language/Info.plist";
+				INFOPLIST_FILE = "Mastering Language/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.moldedbits.Matering-Language";
@@ -691,12 +727,12 @@
 		};
 		09A75C7F1F6B0236002472C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A8138AEE3D7BC9A7ADC0B4B /* Pods-Matering Language.release.xcconfig */;
+			baseConfigurationReference = B1557B68B06F0A6DF91435E3 /* Pods-Mastering Language.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = DHG6J45BG4;
-				INFOPLIST_FILE = "Matering Language/Info.plist";
+				INFOPLIST_FILE = "Mastering Language/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.moldedbits.Matering-Language";
@@ -710,74 +746,74 @@
 		};
 		09A75C811F6B0236002472C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3302E9617BCB5F1222376D40 /* Pods-Matering LanguageTests.debug.xcconfig */;
+			baseConfigurationReference = 92CAA480FA0BA56E4593851B /* Pods-Mastering LanguageTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Matering LanguageTests/Info.plist";
+				INFOPLIST_FILE = "Mastering LanguageTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.moldedbits.Matering-LanguageTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.moldedbits.Mastering-LanguageTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Matering Language.app/Matering Language";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mastering Language.app/Mastering Language";
 			};
 			name = Debug;
 		};
 		09A75C821F6B0236002472C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8056E3ADDC3C157D224F9AF3 /* Pods-Matering LanguageTests.release.xcconfig */;
+			baseConfigurationReference = EA4DEDBEF04476260A79544B /* Pods-Mastering LanguageTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Matering LanguageTests/Info.plist";
+				INFOPLIST_FILE = "Mastering LanguageTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.moldedbits.Matering-LanguageTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.moldedbits.Mastering-LanguageTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Matering Language.app/Matering Language";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mastering Language.app/Mastering Language";
 			};
 			name = Release;
 		};
 		09A75C841F6B0236002472C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7AAF3AAB51E298231F433775 /* Pods-Matering LanguageUITests.debug.xcconfig */;
+			baseConfigurationReference = FDC0867932B8988D97C2B1D3 /* Pods-Mastering LanguageUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Matering LanguageUITests/Info.plist";
+				INFOPLIST_FILE = "Mastering LanguageUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.moldedbits.Matering-LanguageUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.moldedbits.Mastering-LanguageUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Matering Language";
+				TEST_TARGET_NAME = "Mastering Language";
 			};
 			name = Debug;
 		};
 		09A75C851F6B0236002472C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2468D049C097B22F3F77C27D /* Pods-Matering LanguageUITests.release.xcconfig */;
+			baseConfigurationReference = C16BCD8941D632C973679B64 /* Pods-Mastering LanguageUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Matering LanguageUITests/Info.plist";
+				INFOPLIST_FILE = "Mastering LanguageUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.moldedbits.Matering-LanguageUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.moldedbits.Mastering-LanguageUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Matering Language";
+				TEST_TARGET_NAME = "Mastering Language";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		09A75C501F6B0235002472C7 /* Build configuration list for PBXProject "Matering Language" */ = {
+		09A75C501F6B0235002472C7 /* Build configuration list for PBXProject "Mastering Language" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				09A75C7B1F6B0236002472C7 /* Debug */,
@@ -786,7 +822,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		09A75C7D1F6B0236002472C7 /* Build configuration list for PBXNativeTarget "Matering Language" */ = {
+		09A75C7D1F6B0236002472C7 /* Build configuration list for PBXNativeTarget "Mastering Language" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				09A75C7E1F6B0236002472C7 /* Debug */,
@@ -795,7 +831,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		09A75C801F6B0236002472C7 /* Build configuration list for PBXNativeTarget "Matering LanguageTests" */ = {
+		09A75C801F6B0236002472C7 /* Build configuration list for PBXNativeTarget "Mastering LanguageTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				09A75C811F6B0236002472C7 /* Debug */,
@@ -804,7 +840,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		09A75C831F6B0236002472C7 /* Build configuration list for PBXNativeTarget "Matering LanguageUITests" */ = {
+		09A75C831F6B0236002472C7 /* Build configuration list for PBXNativeTarget "Mastering LanguageUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				09A75C841F6B0236002472C7 /* Debug */,
