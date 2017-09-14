@@ -7,7 +7,8 @@ target 'Matering Language' do
 
   # Pods for Matering Language
   pod 'Firebase/Core'
-
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
 
   target 'Matering LanguageTests' do
     inherit! :search_paths

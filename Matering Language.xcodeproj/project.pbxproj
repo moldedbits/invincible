@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		09A75C591F6B0235002472C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A75C581F6B0235002472C7 /* AppDelegate.swift */; };
-		09A75C5B1F6B0235002472C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A75C5A1F6B0235002472C7 /* ViewController.swift */; };
 		09A75C5E1F6B0235002472C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09A75C5C1F6B0235002472C7 /* Main.storyboard */; };
 		09A75C601F6B0235002472C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09A75C5F1F6B0235002472C7 /* Assets.xcassets */; };
 		09A75C631F6B0235002472C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09A75C611F6B0235002472C7 /* LaunchScreen.storyboard */; };
 		09A75C6E1F6B0235002472C7 /* Matering_LanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A75C6D1F6B0235002472C7 /* Matering_LanguageTests.swift */; };
 		09A75C791F6B0236002472C7 /* Matering_LanguageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A75C781F6B0236002472C7 /* Matering_LanguageUITests.swift */; };
+		09CCCC021F6B0D3E00E0B9B1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09A75C861F6B02F7002472C7 /* GoogleService-Info.plist */; };
+		09CCCC061F6B12E800E0B9B1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CCCC041F6B12E800E0B9B1 /* LoginViewController.swift */; };
+		09CCCC071F6B12E800E0B9B1 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09CCCC051F6B12E800E0B9B1 /* LoginViewController.xib */; };
 		1B2571AA08E80DB2393D2467 /* Pods_Matering_LanguageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E957BC0F741C20F9DF9B35 /* Pods_Matering_LanguageTests.framework */; };
 		1C90BE061F6B104600E85221 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C90BE051F6B104600E85221 /* Coordinator.swift */; };
 		1C90BE081F6B10E200E85221 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C90BE071F6B10E200E85221 /* AppCoordinator.swift */; };
@@ -43,7 +45,6 @@
 /* Begin PBXFileReference section */
 		09A75C551F6B0235002472C7 /* Matering Language.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Matering Language.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09A75C581F6B0235002472C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		09A75C5A1F6B0235002472C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		09A75C5D1F6B0235002472C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		09A75C5F1F6B0235002472C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09A75C621F6B0235002472C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +57,8 @@
 		09A75C7A1F6B0236002472C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09A75C861F6B02F7002472C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		09C6AA5294A4CE7A057C4E26 /* Pods_Matering_LanguageUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Matering_LanguageUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		09CCCC041F6B12E800E0B9B1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		09CCCC051F6B12E800E0B9B1 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		1C90BE051F6B104600E85221 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		1C90BE071F6B10E200E85221 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		1C90BE0A1F6B134400E85221 /* Helper+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper+Extension.swift"; sourceTree = "<group>"; };
@@ -123,10 +126,10 @@
 		09A75C571F6B0235002472C7 /* Matering Language */ = {
 			isa = PBXGroup;
 			children = (
+				09CCCC031F6B12AD00E0B9B1 /* ViewControllers */,
 				1C90BE091F6B12AC00E85221 /* Extensions */,
 				1C90BE041F6B0FE400E85221 /* Coordinators */,
 				09A75C581F6B0235002472C7 /* AppDelegate.swift */,
-				09A75C5A1F6B0235002472C7 /* ViewController.swift */,
 				09A75C5C1F6B0235002472C7 /* Main.storyboard */,
 				09A75C5F1F6B0235002472C7 /* Assets.xcassets */,
 				09A75C611F6B0235002472C7 /* LaunchScreen.storyboard */,
@@ -153,6 +156,15 @@
 				09A75C7A1F6B0236002472C7 /* Info.plist */,
 			);
 			path = "Matering LanguageUITests";
+			sourceTree = "<group>";
+		};
+		09CCCC031F6B12AD00E0B9B1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				09CCCC041F6B12E800E0B9B1 /* LoginViewController.swift */,
+				09CCCC051F6B12E800E0B9B1 /* LoginViewController.xib */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		1C90BE041F6B0FE400E85221 /* Coordinators */ = {
@@ -311,7 +323,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09CCCC071F6B12E800E0B9B1 /* LoginViewController.xib in Resources */,
 				09A75C631F6B0235002472C7 /* LaunchScreen.storyboard in Resources */,
+				09CCCC021F6B0D3E00E0B9B1 /* GoogleService-Info.plist in Resources */,
 				09A75C601F6B0235002472C7 /* Assets.xcassets in Resources */,
 				09A75C5E1F6B0235002472C7 /* Main.storyboard in Resources */,
 			);
@@ -454,9 +468,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Matering Language/Pods-Matering Language-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -470,11 +487,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Matering Language/Pods-Matering Language-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -490,6 +511,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09CCCC061F6B12E800E0B9B1 /* LoginViewController.swift in Sources */,
 				1C90BE081F6B10E200E85221 /* AppCoordinator.swift in Sources */,
 				09A75C5B1F6B0235002472C7 /* ViewController.swift in Sources */,
 				09A75C591F6B0235002472C7 /* AppDelegate.swift in Sources */,
