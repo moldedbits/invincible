@@ -18,6 +18,10 @@
 		09CCCC071F6B12E800E0B9B1 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09CCCC051F6B12E800E0B9B1 /* LoginViewController.xib */; };
 		09CCCC0A1F6B1E1D00E0B9B1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CCCC091F6B1E1D00E0B9B1 /* DataManager.swift */; };
 		1B2571AA08E80DB2393D2467 /* Pods_Matering_LanguageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E957BC0F741C20F9DF9B35 /* Pods_Matering_LanguageTests.framework */; };
+		1C90BE061F6B104600E85221 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C90BE051F6B104600E85221 /* Coordinator.swift */; };
+		1C90BE081F6B10E200E85221 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C90BE071F6B10E200E85221 /* AppCoordinator.swift */; };
+		1C90BE111F6B1A5300E85221 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C90BE0F1F6B1A5300E85221 /* CategoriesViewController.swift */; };
+		1C90BE121F6B1A5300E85221 /* CategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C90BE101F6B1A5300E85221 /* CategoriesViewController.xib */; };
 		CD8F0C7A5ABF340D732DE84D /* Pods_Matering_LanguageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C6AA5294A4CE7A057C4E26 /* Pods_Matering_LanguageUITests.framework */; };
 		F1969EAB4CAB31502910748B /* Pods_Matering_Language.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60407C9AEC0274210E6FD538 /* Pods_Matering_Language.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +60,10 @@
 		09C6AA5294A4CE7A057C4E26 /* Pods_Matering_LanguageUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Matering_LanguageUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		09CCCC041F6B12E800E0B9B1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		09CCCC051F6B12E800E0B9B1 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		1C90BE051F6B104600E85221 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		1C90BE071F6B10E200E85221 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		1C90BE0F1F6B1A5300E85221 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		1C90BE101F6B1A5300E85221 /* CategoriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesViewController.xib; sourceTree = "<group>"; };
 		09CCCC091F6B1E1D00E0B9B1 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		22E957BC0F741C20F9DF9B35 /* Pods_Matering_LanguageTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Matering_LanguageTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2468D049C097B22F3F77C27D /* Pods-Matering LanguageUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Matering LanguageUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Matering LanguageUITests/Pods-Matering LanguageUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +130,7 @@
 			children = (
 				09CCCC081F6B1E0000E0B9B1 /* Storage */,
 				09CCCC031F6B12AD00E0B9B1 /* ViewControllers */,
+				1C90BE041F6B0FE400E85221 /* Coordinators */,
 				09A75C581F6B0235002472C7 /* AppDelegate.swift */,
 				09A75C5C1F6B0235002472C7 /* Main.storyboard */,
 				09A75C5F1F6B0235002472C7 /* Assets.xcassets */,
@@ -155,8 +164,19 @@
 			children = (
 				09CCCC041F6B12E800E0B9B1 /* LoginViewController.swift */,
 				09CCCC051F6B12E800E0B9B1 /* LoginViewController.xib */,
+				1C90BE0F1F6B1A5300E85221 /* CategoriesViewController.swift */,
+				1C90BE101F6B1A5300E85221 /* CategoriesViewController.xib */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1C90BE041F6B0FE400E85221 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				1C90BE051F6B104600E85221 /* Coordinator.swift */,
+				1C90BE071F6B10E200E85221 /* AppCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		09CCCC081F6B1E0000E0B9B1 /* Storage */ = {
@@ -308,6 +328,7 @@
 			files = (
 				09CCCC071F6B12E800E0B9B1 /* LoginViewController.xib in Resources */,
 				09A75C631F6B0235002472C7 /* LaunchScreen.storyboard in Resources */,
+				1C90BE121F6B1A5300E85221 /* CategoriesViewController.xib in Resources */,
 				09CCCC021F6B0D3E00E0B9B1 /* GoogleService-Info.plist in Resources */,
 				09A75C601F6B0235002472C7 /* Assets.xcassets in Resources */,
 				09A75C5E1F6B0235002472C7 /* Main.storyboard in Resources */,
@@ -497,8 +518,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				09CCCC061F6B12E800E0B9B1 /* LoginViewController.swift in Sources */,
+				1C90BE081F6B10E200E85221 /* AppCoordinator.swift in Sources */,
 				09CCCC0A1F6B1E1D00E0B9B1 /* DataManager.swift in Sources */,
 				09A75C591F6B0235002472C7 /* AppDelegate.swift in Sources */,
+				1C90BE061F6B104600E85221 /* Coordinator.swift in Sources */,
+				1C90BE111F6B1A5300E85221 /* CategoriesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,6 +692,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = DHG6J45BG4;
 				INFOPLIST_FILE = "Matering Language/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.moldedbits.Matering-Language";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -686,6 +711,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = DHG6J45BG4;
 				INFOPLIST_FILE = "Matering Language/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.moldedbits.Matering-Language";
 				PRODUCT_NAME = "$(TARGET_NAME)";

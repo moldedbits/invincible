@@ -11,7 +11,14 @@ import GoogleSignIn
 
 class LoginViewController: UIViewController, GIDSignInUIDelegate {
 
+    var loginComplete: (() -> ())?
     @IBOutlet weak var googleSignInButton: GIDSignInButton!
+    
+    convenience init(loginComplete:  (() -> ())?) {
+        self.init()
+        
+        self.loginComplete = loginComplete
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
