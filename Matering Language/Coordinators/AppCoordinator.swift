@@ -8,13 +8,22 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 final class AppCoordinator: Coordinator {
     
     func start() {
         childCoordinators = []
-        if UserDefaults.standard.getCurrentUserAuthToken() != nil {
-            startTabCoordinator()
+        //changeViewStateWithUser()
+        
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            self.changeViewStateWithUser()
+        }
+    }
+    
+    func changeViewStateWithUser() {
+        if let _ = Auth.auth().currentUser {
+            startCategoriesCoordinator()
         } else {
             let loginCoordinator = LoginCoordinator(window: window, appCoordinator: self)
             childCoordinators.append(loginCoordinator)
@@ -23,15 +32,18 @@ final class AppCoordinator: Coordinator {
         }
     }
     
-    func startTabCoordinator() {
-        let tabbarCoordinator = TabbarCoordinator(window: window, appCoordinator: self)
-        childCoordinators.append(tabbarCoordinator)
-        tabbarCoordinator.start()
+    func startCategoriesCoordinator() {
+        let navigationController = Helper.createNavigationController()
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+        let categoriesCoordinator = CategoriesCoordinator(navController: navigationController, parentCoordinator: self)
+        childCoordinators.append(categoriesCoordinator)
+        categoriesCoordinator.start()
     }
     
     func loginCoordinatorCompleted(coordinator: LoginCoordinator) {
         removeCoordinator(coordinator)
-        startTabCoordinator()
+        startCategoriesCoordinator()
     }
 }
 
@@ -46,7 +58,7 @@ final class LoginCoordinator: Coordinator {
     }
     
     func start() {
-        let loginViewController = LogInViewController.init() {
+        let loginViewController = LoginViewController.init {
             self.stop()
         }
         
@@ -57,46 +69,34 @@ final class LoginCoordinator: Coordinator {
     func stop() {
         appCoordinator?.loginCoordinatorCompleted(coordinator: self)
     }
-}
-
-final class TabbarCoordinator: Coordinator {
-    var appCoordinator: AppCoordinator?
-    
-    convenience init(window: UIWindow?, appCoordinator: AppCoordinator) {
-        self.init(window: window)
-        
-        self.appCoordinator = appCoordinator
-    }
-    
-    func start() {
-//        let tabbarController = TabBarController()
-//        let dashboardTab = TabbarCoordinator.createNavigationController()
-//        let dashboardCoordinator = DashboardCoordinator(navigationController: dashboardTab, parentCoordinator: self, context: context)
-//        dashboardCoordinator.start()
-//
-//        let profileTab = TabbarCoordinator.createNavigationController()
-//        let profileCoordinator = ProfileCoordinator(navigationController: profileTab, parentCoordinator: self, context: context)
-//        profileCoordinator.start()
-//
-//        childCoordinators.append(contentsOf: [dashboardCoordinator, employeeDirectoryCoordinator, timesheetCoordinator, holidaysCoordinator, profileCoordinator])
-//
-//        tabbarController.viewControllers = [dashboardTab, employeeDirectoryTab, timesheetTab, holidaysTab, profileTab]
-        window?.rootViewController = tabbarController
-        window?.makeKeyAndVisible()
-    }
-    
-    static func createNavigationController() -> UINavigationController {
-        let navigationController = UINavigationController()
-        UINavigationBar.appearance().tintColor = UIColor.white
-//        UINavigationBar.appearance().barTintColor = ColorHex.multipleUtility.color
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-        
-        return navigationController
-    }
     
     func logoutUser() {
         appCoordinator?.start()
     }
 }
 
+final class CategoriesCoordinator: Coordinator {
+    var parentCoordinator: AppCoordinator?
+    
+    convenience init(navController: UINavigationController, parentCoordinator: AppCoordinator) {
+        self.init(navigationController: navController)
+        
+        self.parentCoordinator = parentCoordinator
+    }
+    
+    func start() {
+        let categoriesViewController = CategoriesViewController()
+        navigationController?.viewControllers = [categoriesViewController]
+    }
+}
 
+struct Helper {
+    static func createNavigationController() -> UINavigationController {
+        let navigationController = UINavigationController()
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().barTintColor = UIColor.blue
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        
+        return navigationController
+    }
+}
