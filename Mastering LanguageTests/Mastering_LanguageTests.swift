@@ -1,15 +1,15 @@
 //
-//  Matering_LanguageTests.swift
-//  Matering LanguageTests
+//  Mastering_LanguageTests.swift
+//  Mastering LanguageTests
 //
 //  Created by Amit Kumar Swami on 15/09/17.
 //  Copyright © 2017 Moldedbits. All rights reserved.
 //
 
 import XCTest
-@testable import Matering_Language
+@testable import Mastering_Language
 
-class Matering_LanguageTests: XCTestCase {
+class Mastering_LanguageTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
