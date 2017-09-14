@@ -24,10 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         
-        //Temp
-        window?.rootViewController = LoginViewController()
-        window?.makeKeyAndVisible()
-        
+        let appCoordinator = AppCoordinator(window: self.window)
+        appCoordinator.start()
+
         return true
     }
 
