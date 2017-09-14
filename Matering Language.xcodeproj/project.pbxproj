@@ -244,7 +244,7 @@
 				TargetAttributes = {
 					09A75C541F6B0235002472C7 = {
 						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					09A75C681F6B0235002472C7 = {
 						CreatedOnToolsVersion = 9.0;
@@ -630,11 +630,14 @@
 			baseConfigurationReference = F6AECF5503240D2A2728733A /* Pods-Matering Language.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = DHG6J45BG4;
 				INFOPLIST_FILE = "Matering Language/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.moldedbits.Matering-Language";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "cbab3e2f-46f0-4520-b94e-20e3115ae4c7";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.moldedbits.Matering-Language";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -645,11 +648,14 @@
 			baseConfigurationReference = 9A8138AEE3D7BC9A7ADC0B4B /* Pods-Matering Language.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = DHG6J45BG4;
 				INFOPLIST_FILE = "Matering Language/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.moldedbits.Matering-Language";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "cbab3e2f-46f0-4520-b94e-20e3115ae4c7";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.moldedbits.Matering-Language";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
