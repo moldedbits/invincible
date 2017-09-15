@@ -24,6 +24,10 @@
 		1C0DBD281F6BC811006ED28C /* PassageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0DBD261F6BC811006ED28C /* PassageViewController.swift */; };
 		1C0DBD291F6BC811006ED28C /* PassageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C0DBD271F6BC811006ED28C /* PassageViewController.xib */; };
 		1C0DBD2D1F6BCBC9006ED28C /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0DBD2C1F6BCBC9006ED28C /* CategoryList.swift */; };
+		1C0DBD301F6C0298006ED28C /* PassagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0DBD2E1F6C0298006ED28C /* PassagesTableViewCell.swift */; };
+		1C0DBD311F6C0298006ED28C /* PassagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C0DBD2F1F6C0298006ED28C /* PassagesTableViewCell.xib */; };
+		1C0DBD341F6C11AB006ED28C /* PassagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0DBD321F6C11AB006ED28C /* PassagesViewController.swift */; };
+		1C0DBD351F6C11AB006ED28C /* PassagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C0DBD331F6C11AB006ED28C /* PassagesViewController.xib */; };
 		1C90BE061F6B104600E85221 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C90BE051F6B104600E85221 /* Coordinator.swift */; };
 		1C90BE081F6B10E200E85221 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C90BE071F6B10E200E85221 /* AppCoordinator.swift */; };
 		1C90BE111F6B1A5300E85221 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C90BE0F1F6B1A5300E85221 /* CategoriesViewController.swift */; };
@@ -81,6 +85,10 @@
 		1C0DBD261F6BC811006ED28C /* PassageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageViewController.swift; sourceTree = "<group>"; };
 		1C0DBD271F6BC811006ED28C /* PassageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PassageViewController.xib; sourceTree = "<group>"; };
 		1C0DBD2C1F6BCBC9006ED28C /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
+		1C0DBD2E1F6C0298006ED28C /* PassagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassagesTableViewCell.swift; sourceTree = "<group>"; };
+		1C0DBD2F1F6C0298006ED28C /* PassagesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PassagesTableViewCell.xib; sourceTree = "<group>"; };
+		1C0DBD321F6C11AB006ED28C /* PassagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassagesViewController.swift; sourceTree = "<group>"; };
+		1C0DBD331F6C11AB006ED28C /* PassagesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PassagesViewController.xib; sourceTree = "<group>"; };
 		1C90BE051F6B104600E85221 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		1C90BE071F6B10E200E85221 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		1C90BE0F1F6B1A5300E85221 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +218,8 @@
 				1C0DBD271F6BC811006ED28C /* PassageViewController.xib */,
 				22D61EED1F6BC66300D9F6BE /* QuizViewController.swift */,
 				22D61EEE1F6BC66300D9F6BE /* QuizViewController.xib */,
+				1C0DBD321F6C11AB006ED28C /* PassagesViewController.swift */,
+				1C0DBD331F6C11AB006ED28C /* PassagesViewController.xib */,
 				22D61EF51F6C1D1A00D9F6BE /* ObjectiveQuestionView.swift */,
 				22D61EF71F6C1D2F00D9F6BE /* ObjectiveQuestionView.xib */,
 				22D61EFB1F6C1D5200D9F6BE /* SubjectQuestionView.swift */,
@@ -239,6 +249,8 @@
 			children = (
 				1C0DBD211F6BC7AF006ED28C /* CategoriesTableViewCell.swift */,
 				1C0DBD221F6BC7AF006ED28C /* CategoriesTableViewCell.xib */,
+				1C0DBD2E1F6C0298006ED28C /* PassagesTableViewCell.swift */,
+				1C0DBD2F1F6C0298006ED28C /* PassagesTableViewCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -410,8 +422,10 @@
 			files = (
 				09CCCC071F6B12E800E0B9B1 /* LoginViewController.xib in Resources */,
 				1C0DBD241F6BC7AF006ED28C /* CategoriesTableViewCell.xib in Resources */,
+				1C0DBD311F6C0298006ED28C /* PassagesTableViewCell.xib in Resources */,
 				09A75C631F6B0235002472C7 /* LaunchScreen.storyboard in Resources */,
 				1C90BE121F6B1A5300E85221 /* CategoriesViewController.xib in Resources */,
+				1C0DBD351F6C11AB006ED28C /* PassagesViewController.xib in Resources */,
 				09CCCC021F6B0D3E00E0B9B1 /* GoogleService-Info.plist in Resources */,
 				1C0DBD291F6BC811006ED28C /* PassageViewController.xib in Resources */,
 				22D61EF01F6BC66300D9F6BE /* QuizViewController.xib in Resources */,
@@ -620,7 +634,9 @@
 				1C90BE081F6B10E200E85221 /* AppCoordinator.swift in Sources */,
 				09CCCC0A1F6B1E1D00E0B9B1 /* DataManager.swift in Sources */,
 				09A75C591F6B0235002472C7 /* AppDelegate.swift in Sources */,
+				1C0DBD341F6C11AB006ED28C /* PassagesViewController.swift in Sources */,
 				1C0DBD281F6BC811006ED28C /* PassageViewController.swift in Sources */,
+				1C0DBD301F6C0298006ED28C /* PassagesTableViewCell.swift in Sources */,
 				22D61EFC1F6C1D5200D9F6BE /* SubjectQuestionView.swift in Sources */,
 				1C0DBD2D1F6BCBC9006ED28C /* CategoryList.swift in Sources */,
 				1C90BE061F6B104600E85221 /* Coordinator.swift in Sources */,

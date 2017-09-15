@@ -14,16 +14,20 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var kolodaView: KolodaView!
     @IBOutlet weak var questionLabel: UILabel!
 
-    //    @IBAction func sumbitButtonTapped(_ sender: Any) {
-    //        if selectedQuestion < questions.count {
-    //            selectedQuestion += 1
-    //        }
-    //        updateUI()
-    //    }
-
-    static let dataManger = DataManager()
+    
+    //Mark:- Properties
+    var dataManager: DataManager?
     var passages = [Passage]()
     var questions = [Question]()
+
+    
+    //Mark:- Initialiser
+    convenience init(dataManager: DataManager?) {
+        self.init()
+        
+        self.dataManager = dataManager
+    }
+    
     var selectedPassage: Int = 0
     var selectedQuestion: Int = 0
 
@@ -43,7 +47,7 @@ class QuizViewController: UIViewController {
         kolodaView.dataSource = self as KolodaViewDataSource
         kolodaView.delegate = self as KolodaViewDelegate
 
-        QuizViewController.dataManger.getPassages()
+        dataManager?.getPassages()
             .then { passages -> Void in
                 for count in 0...passages.count - 1 {
                     if passages[count].question.count > 0 {
