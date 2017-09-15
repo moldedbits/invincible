@@ -13,8 +13,8 @@ class CategoriesTableViewCell: UITableViewCell {
     //Mark:- IBOutlets
     @IBOutlet weak var categoryNameLabel: UILabel!
     
-    func configure(with type: CategoryList) {
+    func configure(with category: Category) {
         separatorInset = UIEdgeInsets.zero
-        categoryNameLabel.text = type.categoryType
+        categoryNameLabel.text = category.key
     }
 }

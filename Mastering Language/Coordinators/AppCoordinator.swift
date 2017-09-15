@@ -86,14 +86,14 @@ final class CategoriesCoordinator: Coordinator {
     }
     
     func start() {
-        let categoriesViewController = CategoriesViewController.init(dataManager: dataManager) {
-            self.stop()
+        let categoriesViewController = CategoriesViewController.init(dataManager: dataManager) { category in
+            self.stop(selectedCategory: category)
         }
         navigationController?.viewControllers = [categoriesViewController]
     }
     
-    func stop() {
-        let passageCoordinator = PassageCoordinator(navController: navigationController, parentCoordinator: parentCoordinator, dataManager: dataManager)
+    func stop(selectedCategory: Category) {
+        let passageCoordinator = PassageCoordinator(navController: navigationController, parentCoordinator: parentCoordinator, dataManager: dataManager, passage: selectedCategory.passages.first)
         childCoordinators.append(contentsOf: [passageCoordinator])
         passageCoordinator.start()
     }
@@ -101,16 +101,20 @@ final class CategoriesCoordinator: Coordinator {
 
 final class PassageCoordinator: Coordinator {
     var parentCoordinator: AppCoordinator?
+    var passage: Passage?
     
-    convenience init(navController: UINavigationController?, parentCoordinator: AppCoordinator?, dataManager: DataManager?) {
+    convenience init(navController: UINavigationController?, parentCoordinator: AppCoordinator?, dataManager: DataManager?, passage: Passage?) {
         self.init(navigationController: navController, dataManager: dataManager)
         
         self.parentCoordinator = parentCoordinator
+        self.passage = passage
     }
     
     func start() {
-        guard let dataManager = dataManager else { return }
-        let passageViewController = PassageViewController.init(dataManager: dataManager)
+        guard let dataManager = dataManager,
+            let passage = passage
+            else { return }
+        let passageViewController = PassageViewController(dataManager: dataManager, passage: passage)
         navigationController?.pushViewController(passageViewController, animated: true)
     }
 }

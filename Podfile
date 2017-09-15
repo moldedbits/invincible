@@ -9,6 +9,7 @@ target 'Mastering Language' do
   pod 'Firebase/Database'
   pod 'GoogleSignIn'
   pod 'PromiseKit', '~> 4.4'
+  pod 'PKHUD', '~> 4.0'
 
   target 'Mastering LanguageTests' do
     inherit! :search_paths
