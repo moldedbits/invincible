@@ -116,7 +116,7 @@ class PassageViewController: UIViewController {
             }
             
             let range = (spanishText as NSString).range(of: spanishSentence)
-            sentenceRanges.append(SentenceRange.init(range: range, spanish: spanishSentence, english: englishSentence))
+            sentenceRanges.append(SentenceRange(range: range, spanish: spanishSentence, english: englishSentence))
         }
         
         for (index, value) in sentenceRanges.enumerated() {
@@ -126,9 +126,15 @@ class PassageViewController: UIViewController {
         passageTextView.attributedText = basicAttributePassage
     }
     
-    @objc func textTapped(_ recognizer: UITapGestureRecognizer) {
+    private func resetViews() {
         tipView?.dismiss()
         tipPointView?.removeFromSuperview()
+        tipPointView = nil
+        passageTextView.attributedText = basicAttributePassage
+    }
+    
+    @objc func textTapped(_ recognizer: UITapGestureRecognizer) {
+        resetViews()
         
         // Location of the tap in text-container coordinates
         let layoutManager = passageTextView.layoutManager
@@ -157,8 +163,8 @@ class PassageViewController: UIViewController {
     private func showTranslatedPopup(for sentenceRange: SentenceRange, point: CGPoint) {
         tipView = EasyTipView(text: sentenceRange.english)
         tipPointView = UIView(frame: CGRect(x: point.x, y: point.y, width: 50, height: 10))
-        self.passageTextView.addSubview(tipPointView!)
-        tipView?.show(animated: true, forView: tipPointView!, withinSuperview: self.passageTextView)
+        passageTextView.addSubview(tipPointView!)
+        tipView?.show(animated: true, forView: tipPointView!, withinSuperview: passageTextView)
         
         guard let attribtuedString = basicAttributePassage?.mutableCopy() as? NSMutableAttributedString else { return }
         attribtuedString.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.darkGray, range: sentenceRange.range)
