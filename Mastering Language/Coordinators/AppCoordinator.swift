@@ -14,8 +14,6 @@ final class AppCoordinator: Coordinator {
     
     func start() {
         childCoordinators = []
-        //changeViewStateWithUser()
-        
         Auth.auth().addStateDidChangeListener { (auth, user) in
             self.changeViewStateWithUser()
         }
@@ -85,10 +83,35 @@ final class CategoriesCoordinator: Coordinator {
     }
     
     func start() {
-        let categoriesViewController = CategoriesViewController()
+        let categoriesViewController = CategoriesViewController.init() {
+            self.stop()
+        }
         navigationController?.viewControllers = [categoriesViewController]
     }
+    
+    func stop() {
+        let passageCoordinator = PassageCoordinator(navController: navigationController, parentCoordinator: parentCoordinator)
+        childCoordinators.append(contentsOf: [passageCoordinator])
+        passageCoordinator.start()
+    }
 }
+
+final class PassageCoordinator: Coordinator {
+    var parentCoordinator: AppCoordinator?
+    
+    convenience init(navController: UINavigationController?, parentCoordinator: AppCoordinator?) {
+        self.init(navigationController: navController)
+        
+        self.parentCoordinator = parentCoordinator
+    }
+    
+    func start() {
+        let passageViewController = PassageViewController()
+        navigationController?.pushViewController(passageViewController, animated: true)
+    }
+    
+}
+
 
 struct Helper {
     static func createNavigationController() -> UINavigationController {
@@ -100,3 +123,4 @@ struct Helper {
         return navigationController
     }
 }
+
