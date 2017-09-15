@@ -9,7 +9,7 @@
 import UIKit
 
 class CategoriesViewController: UIViewController {
-  
+    
     private var categoryType = ["Hello!", "Let's Go For Tea", "It's Lunch Time", "Yippee! Party Party"]
     private var categoryTapped: (() -> ())?
     private var dataManager: DataManager?
@@ -20,7 +20,7 @@ class CategoriesViewController: UIViewController {
             categoryTableView.dataSource = self
             categoryTableView.delegate = self
             categoryTableView.rowHeight = UITableViewAutomaticDimension
-            categoryTableView.estimatedRowHeight = 44.0
+            categoryTableView.estimatedRowHeight = 100
             categoryTableView.register(CategoriesTableViewCell.nib(), forCellReuseIdentifier: String(describing: CategoriesTableViewCell.self))
             categoryTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: categoryTableView.bounds.width, height: 44.0))
         }
@@ -40,10 +40,17 @@ class CategoriesViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Categories"
-        dataManager?.getCategories()
-            .then { categories in
-                print(categories)
+        if #available(iOS 11.0, *) {
+            navigationItem.largeTitleDisplayMode = .always
+        } else {
+            // Fallback on earlier versions
         }
+        guard let dataManager = dataManager else { return }
+        dataManager.getCategories()
+            .then { categories in
+                
+                print(categories[0].passages[0].displayName)
+            }
             .catch { error in
                 print(error.localizedDescription)
         }

@@ -14,7 +14,7 @@ class PassageViewController: UIViewController {
     var dataManager: DataManager?
     
     //Mark:- Initialiser
-    convenience init(dataManager: DataManager) {
+    convenience init(dataManager: DataManager, quizButtonTapped: (() -> (()) )) {
         self.init()
         
         self.dataManager = dataManager

@@ -113,6 +113,10 @@ final class PassageCoordinator: Coordinator {
         let passageViewController = PassageViewController.init(dataManager: dataManager)
         navigationController?.pushViewController(passageViewController, animated: true)
     }
+    
+    func stop() {
+        
+    }
 }
 
 
@@ -127,3 +131,16 @@ struct Helper {
     }
 }
 
+final class QuizCoordinator: Coordinator {
+    var parentCoordinator: AppCoordinator?
+    
+    convenience init(navController: UINavigationController?, parentCoordinator: AppCoordinator?, dataManager: DataManager?) {
+        self.init(navigationController: navController, dataManager: dataManager)
+        
+        self.parentCoordinator = parentCoordinator
+    }
+    
+    func start() {
+        
+    }
+}
