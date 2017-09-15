@@ -8,10 +8,19 @@
 
 import UIKit
 import PKHUD
+import EasyTipView
+
+struct GlobalSettings {
+    enum FontSize: CGFloat {
+        case small = 16.0
+        case medium = 18.0
+        case large = 20.0
+    }
+}
 
 class PassageViewController: UIViewController {
     
-    struct SentanceRange {
+    struct SentenceRange {
         var range: NSRange
         var spanish: String
         var english: String
@@ -35,7 +44,10 @@ class PassageViewController: UIViewController {
             setupSentences()
         }
     }
-    private var sentenceRanges = [SentanceRange]()
+    private var sentenceRanges = [SentenceRange]()
+    private var basicAttributePassage: NSMutableAttributedString?
+    private var tipView: EasyTipView?
+    private var tipPointView: UIView?
     
     //Mark:- Initialiser
     convenience init(dataManager: DataManager?, passage: Passage) {
@@ -49,17 +61,35 @@ class PassageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupEasyTipPreferences()
+        getPassageDetails(passage: passage)
+        setupNavigationbar()
+        setupPassageTextView()
+    }
+    
+    private func setupNavigationbar() {
+        navigationItem.title = passage?.key ?? ""
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+        }
+    }
+    
+    private func setupPassageTextView() {
+        guard let spanishText = passage?.passageText?.spanish else { return }
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 5
+        let attributes: [NSAttributedStringKey: Any] = [ NSAttributedStringKey.font: UIFont.systemFont(ofSize: GlobalSettings.FontSize.medium.rawValue),
+                                                         NSAttributedStringKey.paragraphStyle: paragraphStyle
+        ]
+        basicAttributePassage = NSMutableAttributedString(string: spanishText, attributes: attributes)
+        passageTextView.attributedText = basicAttributePassage
+    }
+    
+    private func getPassageDetails(passage: Passage?) {
         guard let passage = passage else {
             HUD.show(.labeledError(title: "Error", subtitle: "Please try again later."))
             return
         }
-        getPassageDetails(passage: passage)
-        guard let spanishText = passage.passageText?.spanish else { return }
-        let attributedString = NSMutableAttributedString(string: spanishText)
-        passageTextView.attributedText = attributedString
-    }
-    
-    func getPassageDetails(passage: Passage) {
         HUD.show(.progress)
         dataManager?.getPassage(key: passage.key)
             .then { passage -> Void in
@@ -73,9 +103,8 @@ class PassageViewController: UIViewController {
         }
     }
     
-    func setupSentences() {
+    private func setupSentences() {
         guard let spanishText = passage?.passageText?.spanish else { return }
-        let attributedString = NSMutableAttributedString(string: spanishText)
         sentenceRanges = []
         for sentence in passage?.sentences ?? [] {
             guard let englishSentence = sentence.english,
@@ -85,17 +114,19 @@ class PassageViewController: UIViewController {
             }
             
             let range = (spanishText as NSString).range(of: spanishSentence)
-            sentenceRanges.append(SentanceRange.init(range: range, spanish: spanishSentence, english: englishSentence))
+            sentenceRanges.append(SentenceRange.init(range: range, spanish: spanishSentence, english: englishSentence))
         }
         
         for (index, value) in sentenceRanges.enumerated() {
-            attributedString.addAttribute(NSAttributedStringKey(rawValue: "sentenceIndex"), value: index, range: value.range)
+            basicAttributePassage?.addAttribute(NSAttributedStringKey(rawValue: "sentenceIndex"), value: index, range: value.range)
         }
         
-        passageTextView.attributedText = attributedString
+        passageTextView.attributedText = basicAttributePassage
     }
     
     @objc func textTapped(_ recognizer: UITapGestureRecognizer) {
+        tipView?.dismiss()
+        tipPointView?.removeFromSuperview()
         
         // Location of the tap in text-container coordinates
         let layoutManager = passageTextView.layoutManager
@@ -106,19 +137,49 @@ class PassageViewController: UIViewController {
         // Find the character that's been tapped on
         let characterIndex = layoutManager.characterIndex(for: location, in: passageTextView.textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
         
-        if characterIndex < passageTextView.textStorage.length {
+        if characterIndex < (passageTextView.textStorage.length - 10) {
             var range = NSRange()
             
             let value = passageTextView.attributedText.attribute(NSAttributedStringKey(rawValue: "sentenceIndex"), at: characterIndex, effectiveRange: &range)
             
-            sentenceTapped(range: range, attributedValue: value)
+            guard let selectedSentenceRange = sentenceRange(for: range, attributedValue: value) else { return }
+            showTranslatedPopup(for: selectedSentenceRange, point: location)
         }
     }
     
-    func sentenceTapped(range: NSRange, attributedValue: Any?) {
-        guard let index = attributedValue as? Int, index < sentenceRanges.count else { return }
-        let sentenceRange = sentenceRanges[index]
+    private func sentenceRange(for range: NSRange, attributedValue: Any?) -> SentenceRange? {
+        guard let index = attributedValue as? Int, index < sentenceRanges.count else { return nil}
+        return sentenceRanges[index]
+    }
+    
+    private func showTranslatedPopup(for sentenceRange: SentenceRange, point: CGPoint) {
+        tipView = EasyTipView(text: sentenceRange.english)
+        tipPointView = UIView(frame: CGRect(x: point.x, y: point.y, width: 50, height: 10))
+        self.passageTextView.addSubview(tipPointView!)
+        tipView?.show(animated: true, forView: tipPointView!, withinSuperview: self.passageTextView)
         
-        print("\(sentenceRange.spanish)")
+        guard let attribtuedString = basicAttributePassage?.mutableCopy() as? NSMutableAttributedString else { return }
+        attribtuedString.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.darkGray, range: sentenceRange.range)
+        
+
+        attribtuedString.addAttribute(NSAttributedStringKey.backgroundColor, value: UIColor.lightGray.withAlphaComponent(0.2), range: sentenceRange.range)
+        
+        self.passageTextView.attributedText = attribtuedString
+    }
+    
+    private func setupEasyTipPreferences() {
+        var preferences = EasyTipView.Preferences()
+        preferences.drawing.font = UIFont.systemFont(ofSize: GlobalSettings.FontSize.medium.rawValue)
+        preferences.drawing.foregroundColor = UIColor.white
+        preferences.drawing.backgroundColor = UIColor(red: 0.56, green: 0.47, blue: 0.67, alpha: 1)
+        preferences.drawing.arrowPosition = .top
+        preferences.animating.dismissTransform = CGAffineTransform(translationX: 0, y: -15)
+        preferences.animating.showInitialTransform = CGAffineTransform(translationX: 0, y: -15)
+        preferences.animating.showInitialAlpha = 0
+        preferences.animating.showDuration = 1.5
+        preferences.animating.dismissDuration = 1.5
+        
+        EasyTipView.globalPreferences = preferences
     }
 }
+

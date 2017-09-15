@@ -10,7 +10,8 @@ target 'Mastering Language' do
   pod 'GoogleSignIn'
   pod 'PromiseKit', '~> 4.4'
   pod 'PKHUD', '~> 4.0'
-
+  pod 'EasyTipView', '~> 1.0.2'
+    
   target 'Mastering LanguageTests' do
     inherit! :search_paths
     # Pods for testing
