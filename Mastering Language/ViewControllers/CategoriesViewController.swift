@@ -54,8 +54,7 @@ extension CategoriesViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let categoryTapped = categoryTapped else { return }
-        categoryTapped()
+        categoryTapped?()
     }
 }
 
