@@ -9,10 +9,11 @@
 import UIKit
 
 class CategoriesViewController: UIViewController {
-  
+    
     private var categoryType = ["Hello!", "Let's Go For Tea", "It's Lunch Time", "Yippee! Party Party"]
-    private var categoryTapped: (() -> ())?
+    private var categoryTapped: ((Category) -> ())?
     private var dataManager: DataManager?
+    fileprivate var categories = [Category]()
     
     //Mark:- IBOutlets
     @IBOutlet weak var categoryTableView: UITableView! {
@@ -27,7 +28,7 @@ class CategoriesViewController: UIViewController {
     }
     
     //Mark:- Initialiser
-    convenience init(dataManager: DataManager?, categoryTapped: @escaping (() -> ())) {
+    convenience init(dataManager: DataManager?, categoryTapped: @escaping ((Category) -> ())) {
         self.init()
         
         self.dataManager = dataManager
@@ -41,9 +42,10 @@ class CategoriesViewController: UIViewController {
         
         title = "Categories"
         dataManager?.getCategories()
-            .then { categories in
-                print(categories)
-        }
+            .then { categories -> Void in
+                self.categories = categories
+                self.categoryTableView.reloadData()
+            }
             .catch { error in
                 print(error.localizedDescription)
         }
@@ -54,20 +56,21 @@ class CategoriesViewController: UIViewController {
 extension CategoriesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categoryType.count
+        return categories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CategoriesTableViewCell.self), for: indexPath) as! CategoriesTableViewCell
-        cell.configure(with: CategoryList(categoryType: categoryType[indexPath.row]))
+        let category = categories[indexPath.row]
+        cell.configure(with: category)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        categoryTapped?()
+        let category = categories[indexPath.row]
+        categoryTapped?(category)
         
     }
-    
 }
 

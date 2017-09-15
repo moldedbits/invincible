@@ -11,12 +11,14 @@ import UIKit
 class PassageViewController: UIViewController {
     @IBOutlet weak var passageLabel: UILabel!
     
-    private var dataManager: DataManager!
+    private var dataManager: DataManager?
+    private var passage: Passage?
     
-    convenience init(dataManager: DataManager) {
+    convenience init(dataManager: DataManager?, passage: Passage) {
         self.init()
         
         self.dataManager = dataManager
+        self.passage = passage
     }
     
     override func viewDidLoad() {
