@@ -49,6 +49,8 @@ PODS:
   - GTMSessionFetcher/Core (1.1.11)
   - GTMSessionFetcher/Full (1.1.11):
     - GTMSessionFetcher/Core (= 1.1.11)
+  - Koloda (4.1):
+    - pop (~> 1.0)
   - leveldb-library (1.18.3)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
@@ -56,6 +58,7 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - PKHUD (4.2.3)
+  - pop (1.0.10)
   - PromiseKit (4.4.0):
     - PromiseKit/Foundation (= 4.4.0)
     - PromiseKit/QuartzCore (= 4.4.0)
@@ -74,6 +77,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - GoogleSignIn
+  - Koloda (~> 4.0)
   - PKHUD (~> 4.0)
   - PromiseKit (~> 4.4)
 
@@ -89,9 +93,11 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: be83fd28d63ae3087e7d351b1f39c1a7e24ab6e7
   GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
+  Koloda: 6c4fa3ce9a68776a8ef973311e53fdda432799a8
   leveldb-library: 10fb39c39e243db4af1828441162405bbcec1404
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   PKHUD: c7692163a09875cbf15827dc581df3c5cf7f1015
+  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   PromiseKit: ecf5fe92275d57ee77c9ede858af47a162e9b97e
 
 PODFILE CHECKSUM: 0cf0ebb96f74733afe4ef23e8d2fd08380b6eaea

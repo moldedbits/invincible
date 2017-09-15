@@ -86,9 +86,9 @@ final class CategoriesCoordinator: Coordinator {
     }
     
     func start() {
-        let categoriesViewController = CategoriesViewController.init(dataManager: dataManager) { category in
-            self.stop(selectedCategory: category)
-        }
+       let categoriesViewController = CategoriesViewController.init(dataManager: dataManager) { category in
+           self.stop(selectedCategory: category)
+       }
         navigationController?.viewControllers = [categoriesViewController]
     }
     

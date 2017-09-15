@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ObjectiveQuestionView" customModule="Mastering_Language" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question ? " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1ET-bY-7rc">
+                    <rect key="frame" x="30" y="40" width="315" height="170"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="cl4-u8-fcm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                    <color key="textColor" red="0.33518591944882248" green="0.3377815672588832" blue="0.32814965512921945" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2g-g3-Er6">
+                    <rect key="frame" x="30" y="260" width="315" height="40"/>
+                    <color key="backgroundColor" red="0.10980392156862745" green="0.39215686274509803" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="FU8-JC-LRC"/>
+                    </constraints>
+                    <state key="normal" title="Option A">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZPV-er-xT0">
+                    <rect key="frame" x="30" y="310" width="315" height="40"/>
+                    <color key="backgroundColor" red="0.10980392156862745" green="0.39215686274509803" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="m9U-Hj-DIy"/>
+                    </constraints>
+                    <state key="normal" title="Option B">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7B6-ad-87k">
+                    <rect key="frame" x="30" y="360" width="315" height="40"/>
+                    <color key="backgroundColor" red="0.10980392156862745" green="0.39215686274509803" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="oT9-Fj-w7Y"/>
+                    </constraints>
+                    <state key="normal" title="Option C">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXo-Mr-T3N">
+                    <rect key="frame" x="30" y="410" width="315" height="40"/>
+                    <color key="backgroundColor" red="0.10980392156862745" green="0.39215686274509803" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="FuR-VR-olz"/>
+                    </constraints>
+                    <state key="normal" title="Option D">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="N2g-g3-Er6" secondAttribute="trailing" constant="30" id="6tc-ZI-0cI"/>
+                <constraint firstItem="1ET-bY-7rc" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="7Tf-IA-TO4"/>
+                <constraint firstItem="QXo-Mr-T3N" firstAttribute="width" secondItem="N2g-g3-Er6" secondAttribute="width" id="9bx-NH-dW0"/>
+                <constraint firstItem="1ET-bY-7rc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="AWY-Mv-VLA"/>
+                <constraint firstItem="QXo-Mr-T3N" firstAttribute="top" secondItem="7B6-ad-87k" secondAttribute="bottom" constant="10" id="FU0-ar-hx0"/>
+                <constraint firstItem="7B6-ad-87k" firstAttribute="width" secondItem="N2g-g3-Er6" secondAttribute="width" id="P1P-j1-xyK"/>
+                <constraint firstItem="ZPV-er-xT0" firstAttribute="centerX" secondItem="N2g-g3-Er6" secondAttribute="centerX" id="Qhr-cy-f37"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1ET-bY-7rc" secondAttribute="trailing" constant="30" id="Up9-2d-DOa"/>
+                <constraint firstItem="7B6-ad-87k" firstAttribute="top" secondItem="ZPV-er-xT0" secondAttribute="bottom" constant="10" id="UxE-H5-bJC"/>
+                <constraint firstItem="QXo-Mr-T3N" firstAttribute="centerX" secondItem="N2g-g3-Er6" secondAttribute="centerX" id="ZBV-hy-6fn"/>
+                <constraint firstItem="N2g-g3-Er6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="czk-r5-ZcE"/>
+                <constraint firstItem="7B6-ad-87k" firstAttribute="centerX" secondItem="N2g-g3-Er6" secondAttribute="centerX" id="pEd-pV-x6q"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="QXo-Mr-T3N" secondAttribute="bottom" constant="50" id="tDO-sL-fbp"/>
+                <constraint firstItem="ZPV-er-xT0" firstAttribute="width" secondItem="N2g-g3-Er6" secondAttribute="width" id="wpL-Kn-CPU"/>
+                <constraint firstItem="ZPV-er-xT0" firstAttribute="top" secondItem="N2g-g3-Er6" secondAttribute="bottom" constant="10" id="xZd-8x-VIl"/>
+                <constraint firstItem="N2g-g3-Er6" firstAttribute="top" secondItem="1ET-bY-7rc" secondAttribute="bottom" constant="50" id="yqg-U7-v1q"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="129.5" y="125"/>
+        </view>
+    </objects>
+</document>
