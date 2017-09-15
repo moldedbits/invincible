@@ -14,12 +14,12 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var kolodaView: KolodaView!
     @IBOutlet weak var questionLabel: UILabel!
 
-//    @IBAction func sumbitButtonTapped(_ sender: Any) {
-//        if selectedQuestion < questions.count {
-//            selectedQuestion += 1
-//        }
-//        updateUI()
-//    }
+    //    @IBAction func sumbitButtonTapped(_ sender: Any) {
+    //        if selectedQuestion < questions.count {
+    //            selectedQuestion += 1
+    //        }
+    //        updateUI()
+    //    }
 
     static let dataManger = DataManager()
     var passages = [Passage]()
@@ -28,7 +28,7 @@ class QuizViewController: UIViewController {
     var selectedQuestion: Int = 0
 
     //Todo: After Database correction
-//        lazy var quizPassage = Passage()
+    //        lazy var quizPassage = Passage()
     //    init(questionsFrom selectedPassage: Passage) {
     //        quizPassage = selectedPassage
     //    }
@@ -73,17 +73,30 @@ class QuizViewController: UIViewController {
 }
 
 extension QuizViewController: KolodaViewDataSource, KolodaViewDelegate {
-    
+
+    func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
+        kolodaView.resetCurrentCardIndex()
+    }
+
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        <#code#>
+//        if index.quotientAndRemainder(dividingBy: 2).remainder == 0 {
+//            let v2 = Bundle.main.loadNibNamed(String(describing: ObjectiveQuestionView.self), owner: self, options: nil)?.first as! ObjectiveQuestionView
+//            return v2
+//        } else {
+//            let v2 = Bundle.main.loadNibNamed(String(describing: SubjectQuestionView.self), owner: self, options: nil)?.first as! SubjectQuestionView
+//            return v2
+//        }
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 500))
+        view.backgroundColor = UIColor.white
+        return view
     }
 
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
-        <#code#>
+        return 5
     }
 
     func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {
-        <#code#>
+        return DragSpeed(rawValue: TimeInterval(exactly: 2.0)!)!
     }
 
 

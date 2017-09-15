@@ -45,16 +45,6 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXo-Mr-T3N">
-                    <rect key="frame" x="30" y="410" width="315" height="40"/>
-                    <color key="backgroundColor" red="0.10980392156862745" green="0.39215686274509803" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="FuR-VR-olz"/>
-                    </constraints>
-                    <state key="normal" title="Option D">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7B6-ad-87k">
                     <rect key="frame" x="30" y="360" width="315" height="40"/>
                     <color key="backgroundColor" red="0.10980392156862745" green="0.39215686274509803" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -62,6 +52,16 @@
                         <constraint firstAttribute="height" constant="40" id="oT9-Fj-w7Y"/>
                     </constraints>
                     <state key="normal" title="Option C">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXo-Mr-T3N">
+                    <rect key="frame" x="30" y="410" width="315" height="40"/>
+                    <color key="backgroundColor" red="0.10980392156862745" green="0.39215686274509803" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="FuR-VR-olz"/>
+                    </constraints>
+                    <state key="normal" title="Option D">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                 </button>
