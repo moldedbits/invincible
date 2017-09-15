@@ -9,30 +9,31 @@
 import UIKit
 
 class QuizViewController: UIViewController {
-
+    
+    //Mark:- IBOutlets
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var multipleChoiceContainerView: UIView!
     @IBOutlet weak var freeTextContainerView: UIView!
 
     @IBAction func sumbitButtonTapped(_ sender: Any) {
     }
-
-    static let dataManger = DataManager()
+    
+    //Mark:- Properties
+    var dataManager: DataManager?
     var passages = [Passage]()
     var questions = [Question]()
-
+    
+    //Mark:- Initialiser
+    convenience init(dataManager: DataManager?) {
+        self.init()
+        
+        self.dataManager = dataManager
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        abc.getPassages()
-//            .then { categories  in
-//                print(categories)
-//            }
-//            .catch { error in
-//                print(error.localizedDescription)
-//        }
-
-        QuizViewController.dataManger.getPassages()
+        dataManager?.getPassages()
             .then { passages -> Void in
                 self.questions = passages[0].question
                 self.updateUI()

@@ -38,6 +38,7 @@ class PassageViewController: UIViewController {
 //        }
 //    }
     
+    //Mark:- Properties
     private var dataManager: DataManager?
     private var passage: Passage? {
         didSet {
@@ -46,6 +47,7 @@ class PassageViewController: UIViewController {
     }
     private var sentenceRanges = [SentanceRange]()
     
+    //Mark:- Initialiser
     convenience init(dataManager: DataManager?, passage: Passage) {
         self.init()
         
@@ -53,6 +55,7 @@ class PassageViewController: UIViewController {
         self.passage = passage
     }
     
+    //Mark:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
