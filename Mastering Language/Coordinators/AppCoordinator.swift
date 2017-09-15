@@ -13,6 +13,7 @@ import Firebase
 final class AppCoordinator: Coordinator {
     
     func start() {
+        dataManager = DataManager()
         childCoordinators = []
         Auth.auth().addStateDidChangeListener { (auth, user) in
             self.changeViewStateWithUser()
@@ -34,7 +35,8 @@ final class AppCoordinator: Coordinator {
         let navigationController = Helper.createNavigationController()
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-        let categoriesCoordinator = CategoriesCoordinator(navController: navigationController, parentCoordinator: self)
+        let categoriesCoordinator = CategoriesCoordinator(navController: navigationController, parentCoordinator: self, dataManager: dataManager)
+        
         childCoordinators.append(categoriesCoordinator)
         categoriesCoordinator.start()
     }
@@ -76,21 +78,22 @@ final class LoginCoordinator: Coordinator {
 final class CategoriesCoordinator: Coordinator {
     var parentCoordinator: AppCoordinator?
     
-    convenience init(navController: UINavigationController, parentCoordinator: AppCoordinator) {
-        self.init(navigationController: navController)
+    convenience init(navController: UINavigationController, parentCoordinator: AppCoordinator, dataManager: DataManager?) {
+        self.init(navigationController: navController, dataManager: dataManager)
         
         self.parentCoordinator = parentCoordinator
+        
     }
     
     func start() {
-        let categoriesViewController = CategoriesViewController.init() {
+        let categoriesViewController = CategoriesViewController.init(dataManager: dataManager) {
             self.stop()
         }
         navigationController?.viewControllers = [categoriesViewController]
     }
     
     func stop() {
-        let passageCoordinator = PassageCoordinator(navController: navigationController, parentCoordinator: parentCoordinator)
+        let passageCoordinator = PassageCoordinator(navController: navigationController, parentCoordinator: parentCoordinator, dataManager: dataManager)
         childCoordinators.append(contentsOf: [passageCoordinator])
         passageCoordinator.start()
     }
@@ -99,17 +102,17 @@ final class CategoriesCoordinator: Coordinator {
 final class PassageCoordinator: Coordinator {
     var parentCoordinator: AppCoordinator?
     
-    convenience init(navController: UINavigationController?, parentCoordinator: AppCoordinator?) {
-        self.init(navigationController: navController)
+    convenience init(navController: UINavigationController?, parentCoordinator: AppCoordinator?, dataManager: DataManager?) {
+        self.init(navigationController: navController, dataManager: dataManager)
         
         self.parentCoordinator = parentCoordinator
     }
     
     func start() {
-        let passageViewController = PassageViewController()
+        guard let dataManager = dataManager else { return }
+        let passageViewController = PassageViewController.init(dataManager: dataManager)
         navigationController?.pushViewController(passageViewController, animated: true)
     }
-    
 }
 
 
@@ -117,7 +120,7 @@ struct Helper {
     static func createNavigationController() -> UINavigationController {
         let navigationController = UINavigationController()
         UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().barTintColor = UIColor.blue
+        UINavigationBar.appearance().barTintColor = UIColor.lightGray
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         
         return navigationController
