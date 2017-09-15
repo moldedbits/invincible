@@ -62,12 +62,14 @@ class DataManager {
     func getPassage(key: String) -> Promise<Passage> {
         return Promise { fulfill, reject in
             databaseReference.child(DatabaseKey.passages.rawValue).child(key).observeSingleEvent(of: .value) { snapshot in
-                guard let values = snapshot.value as? [String: Any] else {
+                guard let value = snapshot.value,
+                    let passage = Passage(key: key, value: value)
+                    else {
                     reject(MLError.decodingFailed(reason: "Decoding failed"))
                     return
                 }
                 
-                fulfill(Passage(key: key, value: snapshot.value!)!)
+                fulfill(passage)
             }
         }
     }
