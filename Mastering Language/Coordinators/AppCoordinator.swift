@@ -103,7 +103,7 @@ final class PassageCoordinator: Coordinator {
     var parentCoordinator: AppCoordinator?
     
     convenience init(navController: UINavigationController?, parentCoordinator: AppCoordinator?, dataManager: DataManager?) {
-        self.init(navigationController: navController)
+        self.init(navigationController: navController, dataManager: dataManager)
         
         self.parentCoordinator = parentCoordinator
     }
