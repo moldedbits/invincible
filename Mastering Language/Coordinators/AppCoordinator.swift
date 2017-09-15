@@ -34,7 +34,7 @@ final class AppCoordinator: Coordinator {
         let navigationController = Helper.createNavigationController()
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-        let categoriesCoordinator = CategoriesCoordinator(navController: navigationController, parentCoordinator: self)
+        let categoriesCoordinator = CategoriesCoordinator(navController: navigationController, parentCoordinator: self, dataManager: dataManager)
         childCoordinators.append(categoriesCoordinator)
         categoriesCoordinator.start()
     }
@@ -76,21 +76,22 @@ final class LoginCoordinator: Coordinator {
 final class CategoriesCoordinator: Coordinator {
     var parentCoordinator: AppCoordinator?
     
-    convenience init(navController: UINavigationController, parentCoordinator: AppCoordinator) {
+    convenience init(navController: UINavigationController, parentCoordinator: AppCoordinator, dataManager: DataManager?) {
         self.init(navigationController: navController)
         
         self.parentCoordinator = parentCoordinator
     }
     
     func start() {
-        let categoriesViewController = CategoriesViewController.init() {
+        guard let dataManager = dataManager else { return }
+        let categoriesViewController = CategoriesViewController.init(dataManager: dataManager) {
             self.stop()
         }
         navigationController?.viewControllers = [categoriesViewController]
     }
     
     func stop() {
-        let passageCoordinator = PassageCoordinator(navController: navigationController, parentCoordinator: parentCoordinator)
+        let passageCoordinator = PassageCoordinator(navController: navigationController, parentCoordinator: parentCoordinator, dataManager: dataManager)
         childCoordinators.append(contentsOf: [passageCoordinator])
         passageCoordinator.start()
     }
@@ -99,17 +100,17 @@ final class CategoriesCoordinator: Coordinator {
 final class PassageCoordinator: Coordinator {
     var parentCoordinator: AppCoordinator?
     
-    convenience init(navController: UINavigationController?, parentCoordinator: AppCoordinator?) {
+    convenience init(navController: UINavigationController?, parentCoordinator: AppCoordinator?, dataManager: DataManager?) {
         self.init(navigationController: navController)
         
         self.parentCoordinator = parentCoordinator
     }
     
     func start() {
-        let passageViewController = PassageViewController()
+        guard let dataManager = dataManager else { return }
+        let passageViewController = PassageViewController.init(dataManager: dataManager)
         navigationController?.pushViewController(passageViewController, animated: true)
     }
-    
 }
 
 

@@ -15,9 +15,10 @@ class Coordinator {
     var childCoordinators: [Coordinator] = []
     weak var navigationController: UINavigationController?
     weak var window: UIWindow?
+    weak var dataManager: DataManager?
     
     //Mark:- Initialiser
-    init(window: UIWindow? = nil, navigationController: UINavigationController? = nil) {
+    init(window: UIWindow? = nil, navigationController: UINavigationController? = nil, dataManager: DataManager? = nil) {
         self.window = window
         self.navigationController = navigationController
     }

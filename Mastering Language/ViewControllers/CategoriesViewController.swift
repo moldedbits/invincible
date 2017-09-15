@@ -12,6 +12,7 @@ class CategoriesViewController: UIViewController {
   
     private var categoryType = ["Hello!", "Let's Go For Tea", "It's Lunch Time", "Yippee! Party Party"]
     private var categoryTapped: (() -> ())?
+    private var dataManager: DataManager?
     
     //Mark:- IBOutlets
     @IBOutlet weak var categoryTableView: UITableView! {
@@ -26,9 +27,10 @@ class CategoriesViewController: UIViewController {
     }
     
     //Mark:- Initialiser
-    convenience init(categoryTapped: @escaping (() -> ())) {
+    convenience init(dataManager: DataManager, categoryTapped: @escaping (() -> ())) {
         self.init()
         
+        self.dataManager = dataManager
         self.categoryTapped = categoryTapped
     }
     
@@ -36,6 +38,9 @@ class CategoriesViewController: UIViewController {
     //Mark:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Categories"
+        
     }
 }
 
