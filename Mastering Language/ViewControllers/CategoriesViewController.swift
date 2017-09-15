@@ -9,27 +9,53 @@
 import UIKit
 
 class CategoriesViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+  
+    private var categoryType = ["Hello!", "Let's Go For Tea", "It's Lunch Time", "Yippee! Party Party"]
+    private var categoryTapped: (() -> ())?
+    
+    //Mark:- IBOutlets
+    @IBOutlet weak var categoryTableView: UITableView! {
+        didSet {
+            categoryTableView.dataSource = self
+            categoryTableView.delegate = self
+            categoryTableView.rowHeight = UITableViewAutomaticDimension
+            categoryTableView.estimatedRowHeight = 44.0
+            categoryTableView.register(CategoriesTableViewCell.nib(), forCellReuseIdentifier: String(describing: CategoriesTableViewCell.self))
+            categoryTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: categoryTableView.bounds.width, height: 44.0))
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //Mark:- Initialiser
+    convenience init(categoryTapped: @escaping (() -> ())) {
+        self.init()
+        
+        self.categoryTapped = categoryTapped
     }
-    */
-
+    
+    
+    //Mark:- View Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }
+
+
+extension CategoriesViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return categoryType.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CategoriesTableViewCell.self), for: indexPath) as! CategoriesTableViewCell
+        cell.configure(with: CategoryList(categoryType: categoryType[indexPath.row]))
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let categoryTapped = categoryTapped else { return }
+        categoryTapped()
+    }
+}
+
