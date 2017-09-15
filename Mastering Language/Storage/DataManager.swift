@@ -86,6 +86,7 @@ struct Passage: Codable {
     var difficulty: String?
     var passageText: Text?
     var question = [Question]()
+    var sentences = [Text]()
     
     init?(key: String, value: Any) {
         guard let value = value as? [String: Any] else { return nil }
@@ -100,6 +101,13 @@ struct Passage: Codable {
                 self.question.append(question)
             }
         }
+        
+        if let sentences = value[Key.sentences.stringValue] as? [Any] {
+            for value in sentences {
+                guard let sentence = Text(value: value) else { continue }
+                self.sentences.append(sentence)
+            }
+        }
     }
     
     enum Key: String, CodingKey {
@@ -108,6 +116,7 @@ struct Passage: Codable {
         case difficulty
         case passageText = "passage_text"
         case questions
+        case sentences
     }
 }
 
