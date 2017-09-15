@@ -9,6 +9,7 @@
 import UIKit
 import PKHUD
 import EasyTipView
+import AVFoundation
 
 struct GlobalSettings {
     enum FontSize: CGFloat {
@@ -49,6 +50,12 @@ class PassageViewController: UIViewController {
     private var tipView: EasyTipView?
     private var tipPointView: UIView?
     private var takeQuizTapped: ((Passage) -> ())?
+    private lazy var synthesizer: AVSpeechSynthesizer = {
+        let synthesizer = AVSpeechSynthesizer()
+        synthesizer.delegate = self
+        return synthesizer
+    }()
+    fileprivate var currentSentenceRange: SentenceRange?
     
     //Mark:- Initialiser
     convenience init(dataManager: DataManager?, passage: Passage, takeQuizTapped: @escaping (Passage) -> ()) {
@@ -130,6 +137,7 @@ class PassageViewController: UIViewController {
         tipView?.dismiss()
         tipPointView?.removeFromSuperview()
         tipPointView = nil
+        synthesizer.stopSpeaking(at: .immediate)
         passageTextView.attributedText = basicAttributePassage
     }
     
@@ -151,7 +159,9 @@ class PassageViewController: UIViewController {
             let value = passageTextView.attributedText.attribute(NSAttributedStringKey(rawValue: "sentenceIndex"), at: characterIndex, effectiveRange: &range)
             
             guard let selectedSentenceRange = sentenceRange(for: range, attributedValue: value) else { return }
+            currentSentenceRange = selectedSentenceRange
             showTranslatedPopup(for: selectedSentenceRange, point: location)
+            speakSelectedRange(sentenceRange: selectedSentenceRange)
         }
     }
     
@@ -166,13 +176,23 @@ class PassageViewController: UIViewController {
         passageTextView.addSubview(tipPointView!)
         tipView?.show(animated: true, forView: tipPointView!, withinSuperview: passageTextView)
         
-        guard let attribtuedString = basicAttributePassage?.mutableCopy() as? NSMutableAttributedString else { return }
+        passageTextView.attributedText = attributedStringForSelectionRange(sentenceRange: sentenceRange)
+    }
+    
+    fileprivate func attributedStringForSelectionRange(sentenceRange: SentenceRange) -> NSMutableAttributedString? {
+        guard let attribtuedString = basicAttributePassage?.mutableCopy() as? NSMutableAttributedString else { return nil }
         attribtuedString.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.darkGray, range: sentenceRange.range)
-        
-
         attribtuedString.addAttribute(NSAttributedStringKey.backgroundColor, value: UIColor.lightGray.withAlphaComponent(0.2), range: sentenceRange.range)
         
-        self.passageTextView.attributedText = attribtuedString
+        return attribtuedString
+    }
+    
+    private func speakSelectedRange(sentenceRange: SentenceRange) {
+        let utterance = AVSpeechUtterance(string: sentenceRange.spanish)
+        utterance.rate = 0.4
+        utterance.voice = AVSpeechSynthesisVoice(language: "es-ES")
+        
+        synthesizer.speak(utterance)
     }
     
     private func setupEasyTipPreferences() {
@@ -195,4 +215,22 @@ class PassageViewController: UIViewController {
         self.takeQuizTapped?(passage)
     }
 }
+
+extension PassageViewController: AVSpeechSynthesizerDelegate {
+    
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, willSpeakRangeOfSpeechString characterRange: NSRange, utterance: AVSpeechUtterance) {
+        guard let sentenceRange = currentSentenceRange else { return }
+
+        let range = NSRange(location: (currentSentenceRange?.range.location ?? 0) + characterRange.location, length: characterRange.length)
+        let mutableAttribuedString = attributedStringForSelectionRange(sentenceRange: sentenceRange)
+        mutableAttribuedString?.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.blue, range: range)
+        passageTextView.attributedText = mutableAttribuedString
+    }
+    
+    private func speechSynthesizer(synthesizer: AVSpeechSynthesizer, didFinishSpeechUtterance utterance: AVSpeechUtterance) {
+        guard let sentenceRange = currentSentenceRange else { return }
+        passageTextView.attributedText = attributedStringForSelectionRange(sentenceRange: sentenceRange)
+    }
+}
+
 
