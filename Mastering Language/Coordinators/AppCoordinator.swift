@@ -89,7 +89,7 @@ final class CategoriesCoordinator: Coordinator {
         let categoriesViewController = CategoriesViewController.init(dataManager: dataManager) { category in
             self.stop(selectedCategory: category)
         }
-        navigationController?.viewControllers = [categoriesViewController]
+        navigationController?.viewControllers = [QuizViewController()]
     }
     
     func stop(selectedCategory: Category) {
