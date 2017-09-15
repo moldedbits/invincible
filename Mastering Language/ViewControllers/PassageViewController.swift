@@ -9,19 +9,26 @@
 import UIKit
 
 class PassageViewController: UIViewController {
+    
+    //Mark:- IBOutlets
     @IBOutlet weak var passageLabel: UILabel!
     
+    //Mark:- Properties
     private var dataManager: DataManager?
     private var passage: Passage?
+    private var passageTapped: (() -> ())?
     
-    convenience init(dataManager: DataManager?, passage: Passage) {
+    //Mark:- Initialiser
+    convenience init(dataManager: DataManager?, passage: Passage, passageTapped: @escaping (() -> ())) {
         self.init()
         
+        self.passageTapped = passageTapped
         self.dataManager = dataManager
         self.passage = passage
     }
     
+    //Mark:- View Life Cycle
     override func viewDidLoad() {
-        
+        passageLabel.text = passage?.passageText?.english
     }
 }
