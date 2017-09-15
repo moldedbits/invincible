@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SubjectQuestionView: UIView {
+class SubjectiveQuestionView: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.

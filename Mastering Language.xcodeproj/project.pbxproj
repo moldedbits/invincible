@@ -39,7 +39,7 @@
 		22D61EF61F6C1D1A00D9F6BE /* ObjectiveQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D61EF51F6C1D1A00D9F6BE /* ObjectiveQuestionView.swift */; };
 		22D61EF81F6C1D2F00D9F6BE /* ObjectiveQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22D61EF71F6C1D2F00D9F6BE /* ObjectiveQuestionView.xib */; };
 		22D61EFA1F6C1D4100D9F6BE /* SubjectiveQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22D61EF91F6C1D4100D9F6BE /* SubjectiveQuestionView.xib */; };
-		22D61EFC1F6C1D5200D9F6BE /* SubjectQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D61EFB1F6C1D5200D9F6BE /* SubjectQuestionView.swift */; };
+		22D61EFC1F6C1D5200D9F6BE /* SubjectiveQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D61EFB1F6C1D5200D9F6BE /* SubjectiveQuestionView.swift */; };
 		5E1287C31520046B624D81E0 /* Pods_Mastering_Language.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A10AB93C9FE6C6CCED49CFC /* Pods_Mastering_Language.framework */; };
 		7F6BEC853D6899FF7D2CF9CE /* Pods_Mastering_LanguageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6333FF9B5D0A5939F73800A9 /* Pods_Mastering_LanguageTests.framework */; };
 		CD8F0C7A5ABF340D732DE84D /* Pods_Matering_LanguageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C6AA5294A4CE7A057C4E26 /* Pods_Matering_LanguageUITests.framework */; };
@@ -102,7 +102,7 @@
 		22D61EF51F6C1D1A00D9F6BE /* ObjectiveQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectiveQuestionView.swift; sourceTree = "<group>"; };
 		22D61EF71F6C1D2F00D9F6BE /* ObjectiveQuestionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ObjectiveQuestionView.xib; sourceTree = "<group>"; };
 		22D61EF91F6C1D4100D9F6BE /* SubjectiveQuestionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubjectiveQuestionView.xib; sourceTree = "<group>"; };
-		22D61EFB1F6C1D5200D9F6BE /* SubjectQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectQuestionView.swift; sourceTree = "<group>"; };
+		22D61EFB1F6C1D5200D9F6BE /* SubjectiveQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectiveQuestionView.swift; sourceTree = "<group>"; };
 		22E957BC0F741C20F9DF9B35 /* Pods_Matering_LanguageTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Matering_LanguageTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2468D049C097B22F3F77C27D /* Pods-Matering LanguageUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Matering LanguageUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Matering LanguageUITests/Pods-Matering LanguageUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3302E9617BCB5F1222376D40 /* Pods-Matering LanguageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Matering LanguageTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Matering LanguageTests/Pods-Matering LanguageTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -226,7 +226,7 @@
 				1C0DBD331F6C11AB006ED28C /* PassagesViewController.xib */,
 				22D61EF51F6C1D1A00D9F6BE /* ObjectiveQuestionView.swift */,
 				22D61EF71F6C1D2F00D9F6BE /* ObjectiveQuestionView.xib */,
-				22D61EFB1F6C1D5200D9F6BE /* SubjectQuestionView.swift */,
+				22D61EFB1F6C1D5200D9F6BE /* SubjectiveQuestionView.swift */,
 				22D61EF91F6C1D4100D9F6BE /* SubjectiveQuestionView.xib */,
 				0948C95A1F6C585500B4AF90 /* TranslatedTextViewController.swift */,
 				0948C95B1F6C585500B4AF90 /* TranslatedTextViewController.xib */,
@@ -647,7 +647,7 @@
 				1C0DBD341F6C11AB006ED28C /* PassagesViewController.swift in Sources */,
 				1C0DBD281F6BC811006ED28C /* PassageViewController.swift in Sources */,
 				1C0DBD301F6C0298006ED28C /* PassagesTableViewCell.swift in Sources */,
-				22D61EFC1F6C1D5200D9F6BE /* SubjectQuestionView.swift in Sources */,
+				22D61EFC1F6C1D5200D9F6BE /* SubjectiveQuestionView.swift in Sources */,
 				1C0DBD2D1F6BCBC9006ED28C /* CategoryList.swift in Sources */,
 				1C90BE061F6B104600E85221 /* Coordinator.swift in Sources */,
 				1C90BE111F6B1A5300E85221 /* CategoriesViewController.swift in Sources */,

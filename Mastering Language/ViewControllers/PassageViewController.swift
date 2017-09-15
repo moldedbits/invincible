@@ -78,9 +78,6 @@ class PassageViewController: UIViewController {
     
     private func setupNavigationbar() {
         navigationItem.title = passage?.key ?? ""
-        if #available(iOS 11.0, *) {
-            navigationController?.navigationBar.prefersLargeTitles = true
-        }
     }
     
     private func setupPassageTextView() {

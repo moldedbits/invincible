@@ -144,7 +144,7 @@ final class PassageCoordinator: Coordinator {
     }
     
     func stop(passage: Passage) {
-        let quizCoordinator = QuizCoordinator(navController: navigationController, parentCoordinator: parentCoordinator, dataManager: dataManager)
+        let quizCoordinator = QuizCoordinator(navController: navigationController, parentCoordinator: parentCoordinator, dataManager: dataManager, passage: passage)
         childCoordinators.append(contentsOf: [quizCoordinator])
         quizCoordinator.start()
     }
@@ -152,15 +152,17 @@ final class PassageCoordinator: Coordinator {
 
 final class QuizCoordinator: Coordinator {
     var parentCoordinator: AppCoordinator?
+    var passage: Passage!
     
-    convenience init(navController: UINavigationController?, parentCoordinator: AppCoordinator?, dataManager: DataManager?) {
+    convenience init(navController: UINavigationController?, parentCoordinator: AppCoordinator?, dataManager: DataManager?, passage: Passage) {
         self.init(navigationController: navController, dataManager: dataManager)
         
         self.parentCoordinator = parentCoordinator
+        self.passage = passage
     }
     
     func start() {
-        let quizViewController = QuizViewController.init(dataManager: dataManager)
+        let quizViewController = QuizViewController.init(dataManager: dataManager, passage: passage)
         navigationController?.pushViewController(quizViewController, animated: true)
     }
 }
