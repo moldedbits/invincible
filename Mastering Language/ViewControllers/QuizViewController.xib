@@ -29,7 +29,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5OA-8g-arm" userLabel="Koloda View" customClass="KolodaView" customModule="Koloda">
-                    <rect key="frame" x="50" y="123" width="275" height="444"/>
+                    <rect key="frame" x="50" y="123" width="275" height="394"/>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
@@ -40,7 +40,7 @@
                 <constraint firstItem="hfY-7b-jK8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="4E0-72-q8E"/>
                 <constraint firstItem="5OA-8g-arm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="4UL-0X-YsT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5OA-8g-arm" secondAttribute="trailing" constant="50" id="5gV-Lf-kKr"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="5OA-8g-arm" secondAttribute="bottom" constant="100" id="Sd1-lL-GSs"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="5OA-8g-arm" secondAttribute="bottom" constant="150" id="Sd1-lL-GSs"/>
                 <constraint firstItem="5OA-8g-arm" firstAttribute="top" secondItem="hfY-7b-jK8" secondAttribute="bottom" constant="30" id="VIn-Km-QHJ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

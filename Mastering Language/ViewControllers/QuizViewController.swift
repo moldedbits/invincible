@@ -80,15 +80,16 @@ extension QuizViewController: KolodaViewDataSource, KolodaViewDelegate {
 
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
 //        if index.quotientAndRemainder(dividingBy: 2).remainder == 0 {
-//            let v2 = Bundle.main.loadNibNamed(String(describing: ObjectiveQuestionView.self), owner: self, options: nil)?.first as! ObjectiveQuestionView
-//            return v2
+            let v2 = Bundle.main.loadNibNamed(String(describing: ObjectiveQuestionView.self), owner: self, options: nil)?.first as! ObjectiveQuestionView
+            return v2
 //        } else {
 //            let v2 = Bundle.main.loadNibNamed(String(describing: SubjectQuestionView.self), owner: self, options: nil)?.first as! SubjectQuestionView
 //            return v2
 //        }
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 500))
-        view.backgroundColor = UIColor.white
-        return view
+
+//        let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 500))
+//        view.backgroundColor = UIColor.white
+//        return view
     }
 
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
