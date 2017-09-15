@@ -10,9 +10,11 @@ import UIKit
 
 class CategoriesTableViewCell: UITableViewCell {
     
+    //Mark:- IBOutlets
+    @IBOutlet weak var categoryNameLabel: UILabel!
+    
     func configure(with type: CategoryList) {
         separatorInset = UIEdgeInsets.zero
-        categoryLabel.text = type.categoryType
+        categoryNameLabel.text = type.categoryType
     }
-
 }
