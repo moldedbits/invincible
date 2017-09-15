@@ -137,11 +137,13 @@ final class PassageCoordinator: Coordinator {
         guard let dataManager = dataManager,
             let passage = passage
             else { return }
-        let passageViewController = PassageViewController(dataManager: dataManager, passage: passage)
+        let passageViewController = PassageViewController(dataManager: dataManager, passage: passage) { passage in
+            self.stop(passage: passage)
+        }
         navigationController?.pushViewController(passageViewController, animated: true)
     }
     
-    func stop() {
+    func stop(passage: Passage) {
         let quizCoordinator = QuizCoordinator(navController: navigationController, parentCoordinator: parentCoordinator, dataManager: dataManager)
         childCoordinators.append(contentsOf: [quizCoordinator])
         quizCoordinator.start()

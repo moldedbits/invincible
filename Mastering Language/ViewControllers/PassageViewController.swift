@@ -48,13 +48,15 @@ class PassageViewController: UIViewController {
     private var basicAttributePassage: NSMutableAttributedString?
     private var tipView: EasyTipView?
     private var tipPointView: UIView?
+    private var takeQuizTapped: ((Passage) -> ())?
     
     //Mark:- Initialiser
-    convenience init(dataManager: DataManager?, passage: Passage) {
+    convenience init(dataManager: DataManager?, passage: Passage, takeQuizTapped: @escaping (Passage) -> ()) {
         self.init()
         
         self.dataManager = dataManager
         self.passage = passage
+        self.takeQuizTapped = takeQuizTapped
     }
     
     //Mark:- View Life Cycle
@@ -180,6 +182,11 @@ class PassageViewController: UIViewController {
         preferences.animating.dismissDuration = 1.5
         
         EasyTipView.globalPreferences = preferences
+    }
+    
+    @IBAction func takeQuizButtonTapped(_ sender: UIButton) {
+        guard let passage = passage else { return }
+        self.takeQuizTapped?(passage)
     }
 }
 
