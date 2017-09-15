@@ -15,6 +15,7 @@
                 <outlet property="freeTextContainerView" destination="NQq-jQ-f0l" id="eIN-Iw-wZk"/>
                 <outlet property="multipleChoiceContainerView" destination="zqo-iz-Nv1" id="gC0-GN-tdk"/>
                 <outlet property="questionLabel" destination="hfY-7b-jK8" id="gRn-8x-9RU"/>
+                <outlet property="submitButton" destination="oQG-3k-hQL" id="PrH-uC-agX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfY-7b-jK8">
-                    <rect key="frame" x="20" y="70" width="335" height="23"/>
+                    <rect key="frame" x="20" y="70" width="335" height="317"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                     <color key="textColor" red="0.30937060237709635" green="0.31176633883248728" blue="0.30287625638959303" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -137,6 +138,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="oQG-3k-hQL" secondAttribute="bottom" constant="30" id="cxB-PM-xCF"/>
                 <constraint firstItem="oQG-3k-hQL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="fYb-W9-aOS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="NQq-jQ-f0l" secondAttribute="bottom" constant="100" id="tQf-Uu-rNb"/>
+                <constraint firstItem="zqo-iz-Nv1" firstAttribute="top" secondItem="hfY-7b-jK8" secondAttribute="bottom" constant="10" id="xBX-Pm-Q1y"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="33.5" y="54.5"/>
