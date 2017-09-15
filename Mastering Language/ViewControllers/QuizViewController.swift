@@ -10,26 +10,43 @@ import UIKit
 
 class QuizViewController: UIViewController {
 
+    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var multipleChoiceContainerView: UIView!
+    @IBOutlet weak var freeTextContainerView: UIView!
+
+    @IBAction func sumbitButtonTapped(_ sender: Any) {
+    }
+
+    static let dataManger = DataManager()
+    var passages = [Passage]()
+    var questions = [Question]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+//        abc.getPassages()
+//            .then { categories  in
+//                print(categories)
+//            }
+//            .catch { error in
+//                print(error.localizedDescription)
+//        }
+
+        QuizViewController.dataManger.getPassages()
+            .then { passages -> Void in
+                self.questions = passages[0].question
+                self.updateUI()
+        }
+            .catch { error in
+                print(error.localizedDescription)
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+    func updateUI() {
+        if let question = questions.first as Question? {
+            questionLabel.text = question.text?.english
+        }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
 
 }

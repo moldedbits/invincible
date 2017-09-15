@@ -86,7 +86,7 @@ final class CategoriesCoordinator: Coordinator {
     
     func start() {
         let categoriesViewController = CategoriesViewController()
-        navigationController?.viewControllers = [categoriesViewController]
+        navigationController?.viewControllers = [QuizViewController()]
     }
 }
 
@@ -94,7 +94,7 @@ struct Helper {
     static func createNavigationController() -> UINavigationController {
         let navigationController = UINavigationController()
         UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().barTintColor = UIColor.blue
+        UINavigationBar.appearance().barTintColor = UIColor.lightGray
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         
         return navigationController
