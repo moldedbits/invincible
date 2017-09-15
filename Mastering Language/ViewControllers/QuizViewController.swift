@@ -7,20 +7,19 @@
 //
 
 import UIKit
+import Koloda
 
 class QuizViewController: UIViewController {
 
+    @IBOutlet weak var kolodaView: KolodaView!
     @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var multipleChoiceContainerView: UIView!
-    @IBOutlet weak var freeTextContainerView: UIView!
-    @IBOutlet weak var submitButton: UIButton!
 
-    @IBAction func sumbitButtonTapped(_ sender: Any) {
-        if selectedQuestion < questions.count {
-            selectedQuestion += 1
-        }
-        updateUI()
-    }
+//    @IBAction func sumbitButtonTapped(_ sender: Any) {
+//        if selectedQuestion < questions.count {
+//            selectedQuestion += 1
+//        }
+//        updateUI()
+//    }
 
     static let dataManger = DataManager()
     var passages = [Passage]()
@@ -40,6 +39,9 @@ class QuizViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        kolodaView.dataSource = self as KolodaViewDataSource
+        kolodaView.delegate = self as KolodaViewDelegate
 
         QuizViewController.dataManger.getPassages()
             .then { passages -> Void in
@@ -69,3 +71,21 @@ class QuizViewController: UIViewController {
     }
 
 }
+
+extension QuizViewController: KolodaViewDataSource, KolodaViewDelegate {
+    
+    func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
+        <#code#>
+    }
+
+    func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
+        <#code#>
+    }
+
+    func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {
+        <#code#>
+    }
+
+
+}
+
