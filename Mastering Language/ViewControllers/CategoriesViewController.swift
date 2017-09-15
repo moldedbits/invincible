@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class CategoriesViewController: UIViewController {
     
@@ -41,10 +42,15 @@ class CategoriesViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Categories"
+        HUD.show(.progress)
+        HUD.dimsBackground = true
         dataManager?.getCategories()
             .then { categories -> Void in
                 self.categories = categories
                 self.categoryTableView.reloadData()
+            }
+            .always {
+                HUD.hide()
             }
             .catch { error in
                 print(error.localizedDescription)
