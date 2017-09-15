@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0948C95C1F6C585500B4AF90 /* TranslatedTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0948C95A1F6C585500B4AF90 /* TranslatedTextViewController.swift */; };
+		0948C95D1F6C585500B4AF90 /* TranslatedTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0948C95B1F6C585500B4AF90 /* TranslatedTextViewController.xib */; };
 		09A75C591F6B0235002472C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A75C581F6B0235002472C7 /* AppDelegate.swift */; };
 		09A75C5E1F6B0235002472C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09A75C5C1F6B0235002472C7 /* Main.storyboard */; };
 		09A75C601F6B0235002472C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09A75C5F1F6B0235002472C7 /* Assets.xcassets */; };
@@ -62,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0948C95A1F6C585500B4AF90 /* TranslatedTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatedTextViewController.swift; sourceTree = "<group>"; };
+		0948C95B1F6C585500B4AF90 /* TranslatedTextViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TranslatedTextViewController.xib; sourceTree = "<group>"; };
 		09A75C551F6B0235002472C7 /* Mastering Language.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mastering Language.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09A75C581F6B0235002472C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09A75C5D1F6B0235002472C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -224,6 +228,8 @@
 				22D61EF71F6C1D2F00D9F6BE /* ObjectiveQuestionView.xib */,
 				22D61EFB1F6C1D5200D9F6BE /* SubjectQuestionView.swift */,
 				22D61EF91F6C1D4100D9F6BE /* SubjectiveQuestionView.xib */,
+				0948C95A1F6C585500B4AF90 /* TranslatedTextViewController.swift */,
+				0948C95B1F6C585500B4AF90 /* TranslatedTextViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -422,6 +428,7 @@
 			files = (
 				09CCCC071F6B12E800E0B9B1 /* LoginViewController.xib in Resources */,
 				1C0DBD241F6BC7AF006ED28C /* CategoriesTableViewCell.xib in Resources */,
+				0948C95D1F6C585500B4AF90 /* TranslatedTextViewController.xib in Resources */,
 				1C0DBD311F6C0298006ED28C /* PassagesTableViewCell.xib in Resources */,
 				09A75C631F6B0235002472C7 /* LaunchScreen.storyboard in Resources */,
 				1C90BE121F6B1A5300E85221 /* CategoriesViewController.xib in Resources */,
@@ -592,6 +599,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Mastering Language/Pods-Mastering Language-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/EasyTipView/EasyTipView.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -604,6 +612,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasyTipView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -630,6 +639,7 @@
 				09CCCC061F6B12E800E0B9B1 /* LoginViewController.swift in Sources */,
 				1C0DBD231F6BC7AF006ED28C /* CategoriesTableViewCell.swift in Sources */,
 				1C0DBD1F1F6BC762006ED28C /* UIView+Extension.swift in Sources */,
+				0948C95C1F6C585500B4AF90 /* TranslatedTextViewController.swift in Sources */,
 				22D61EEF1F6BC66300D9F6BE /* QuizViewController.swift in Sources */,
 				1C90BE081F6B10E200E85221 /* AppCoordinator.swift in Sources */,
 				09CCCC0A1F6B1E1D00E0B9B1 /* DataManager.swift in Sources */,

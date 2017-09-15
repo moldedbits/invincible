@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PassageViewController" customModule="Mastering_Language" customModuleProvider="target">
             <connections>
-                <outlet property="passageLabel" destination="pz2-UT-RNC" id="flr-O0-kev"/>
+                <outlet property="passageTextView" destination="rfV-CN-mp3" id="4fg-ZM-Jds"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,33 +21,36 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jyX-5g-wTX">
-                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pz2-UT-RNC">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rfV-CN-mp3">
+                    <rect key="frame" x="10" y="30" width="375" height="593"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ioS-PS-bMS">
+                    <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="pz2-UT-RNC" secondAttribute="trailing" id="4n1-Y3-FZP"/>
-                        <constraint firstItem="pz2-UT-RNC" firstAttribute="top" secondItem="jyX-5g-wTX" secondAttribute="top" id="Aox-XE-qfY"/>
-                        <constraint firstItem="pz2-UT-RNC" firstAttribute="leading" secondItem="jyX-5g-wTX" secondAttribute="leading" id="cfA-7b-akd"/>
-                        <constraint firstAttribute="bottom" secondItem="pz2-UT-RNC" secondAttribute="bottom" id="x9f-I9-WDq"/>
+                        <constraint firstAttribute="height" constant="44" id="ZLU-WI-y4r"/>
                     </constraints>
-                </scrollView>
+                    <state key="normal" title="Take Quiz"/>
+                    <connections>
+                        <action selector="takeQuizButtonTapped:" destination="-1" eventType="touchUpInside" id="bwO-b2-Yz4"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="jyX-5g-wTX" secondAttribute="trailing" id="c4J-iw-1Fi"/>
-                <constraint firstItem="jyX-5g-wTX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="cLC-m0-zTO"/>
-                <constraint firstItem="pz2-UT-RNC" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="g2n-g0-Ja5"/>
-                <constraint firstItem="jyX-5g-wTX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="goK-61-0Ar"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="jyX-5g-wTX" secondAttribute="bottom" id="oCK-1u-1nB"/>
+                <constraint firstItem="ioS-PS-bMS" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="7kn-Gu-XUS"/>
+                <constraint firstItem="ioS-PS-bMS" firstAttribute="top" secondItem="rfV-CN-mp3" secondAttribute="bottom" id="gDv-eC-aIA"/>
+                <constraint firstItem="rfV-CN-mp3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="iJj-T6-1AY"/>
+                <constraint firstItem="rfV-CN-mp3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="jVR-kw-0qX"/>
+                <constraint firstItem="rfV-CN-mp3" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="10" id="pgc-Bl-Yth"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ioS-PS-bMS" secondAttribute="trailing" id="rNY-TE-9XV"/>
+                <constraint firstItem="ioS-PS-bMS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wxl-vJ-Nax"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
     </objects>
 </document>
