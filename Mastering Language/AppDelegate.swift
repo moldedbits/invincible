@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appCoordinator.start()
         
         let abc = DataManager()
-        abc.getPassages()
+        abc.getPassage(key: "Family")
             .then { categories  in
                 print(categories)
             }

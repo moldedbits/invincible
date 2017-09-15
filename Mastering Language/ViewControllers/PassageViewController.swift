@@ -12,7 +12,14 @@ class PassageViewController: UIViewController {
 
     @IBOutlet weak var passageLabel: UILabel!
     
-    init()
+    private var dataManager: DataManager!
+    
+    convenience init(dataManager: DataManager) {
+        self.init()
+        
+        self.dataManager = dataManager
+    }
+    
     override func viewDidLoad() {
     }
 }

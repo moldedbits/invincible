@@ -14,7 +14,10 @@ enum MLError: Error {
     case decodingFailed(reason: String)
     case unknown(reason: String)
 }
-
+enum DatabaseKey:String {
+    case categories
+    case passages
+}
 class DataManager {
     private var databaseReference: DatabaseReference!
     
@@ -52,6 +55,19 @@ class DataManager {
                     passages.append(passage)
                 }
                 fulfill(passages)
+            }
+        }
+    }
+    
+    func getPassage(key: String) -> Promise<Passage> {
+        return Promise { fulfill, reject in
+            databaseReference.child(DatabaseKey.passages.rawValue).child(key).observeSingleEvent(of: .value) { snapshot in
+                guard let values = snapshot.value as? [String: Any] else {
+                    reject(MLError.decodingFailed(reason: "Decoding failed"))
+                    return
+                }
+                
+                fulfill(Passage(key: key, value: snapshot.value!)!)
             }
         }
     }
