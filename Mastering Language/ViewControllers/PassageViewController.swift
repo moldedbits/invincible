@@ -27,16 +27,6 @@ class PassageViewController: UIViewController {
             passageTextView.isEditable = false
         }
     }
-//    @IBOutlet weak var passageLabel: UILabel! {
-//        didSet {
-//            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(textTapped))
-//            passageLabel.addGestureRecognizer(tapGestureRecognizer)
-//            tapGestureRecognizer.isEnabled = true
-//
-//            passageLabel.isUserInteractionEnabled = true
-//            passageLabel.numberOfLines = 0
-//        }
-//    }
     
     //Mark:- Properties
     private var dataManager: DataManager?
@@ -98,8 +88,8 @@ class PassageViewController: UIViewController {
             sentenceRanges.append(SentanceRange.init(range: range, spanish: spanishSentence, english: englishSentence))
         }
         
-        for value in sentenceRanges {
-            attributedString.addAttribute(NSAttributedStringKey(rawValue: "trans"), value: value.english, range: value.range)
+        for (index, value) in sentenceRanges.enumerated() {
+            attributedString.addAttribute(NSAttributedStringKey(rawValue: "sentenceIndex"), value: index, range: value.range)
         }
         
         passageTextView.attributedText = attributedString
@@ -119,53 +109,16 @@ class PassageViewController: UIViewController {
         if characterIndex < passageTextView.textStorage.length {
             var range = NSRange()
             
-            let value = passageTextView.attributedText.attribute(NSAttributedStringKey(rawValue: "trans"), at: characterIndex, effectiveRange: &range)
+            let value = passageTextView.attributedText.attribute(NSAttributedStringKey(rawValue: "sentenceIndex"), at: characterIndex, effectiveRange: &range)
             
-            print("\(value) \(range.location)")
+            sentenceTapped(range: range, attributedValue: value)
         }
-//        for sentenceRange in sentenceRanges {
-//            guard let glyphRect = passageLabel.boundingRectForCharacterRange(range: sentenceRange.range) else { continue }
-//
-//            let touchPoint = recognizer.location(ofTouch: 0, in: self.passageLabel)
-//            if glyphRect.contains(touchPoint) {
-//                sentenceTapped(sentenceRange: sentenceRange, touchPoint: touchPoint, glyphRect: glyphRect)
-//            }
-//        }
     }
     
-    func sentenceTapped(sentenceRange: SentanceRange, touchPoint: CGPoint, glyphRect: CGRect) {
-        print("\(sentenceRange.spanish) \(touchPoint.debugDescription) \(glyphRect.debugDescription)")
-    }
-}
-
-extension UILabel {
-    func boundingRectForCharacterRange(range: NSRange) -> CGRect? {
+    func sentenceTapped(range: NSRange, attributedValue: Any?) {
+        guard let index = attributedValue as? Int, index < sentenceRanges.count else { return }
+        let sentenceRange = sentenceRanges[index]
         
-        guard let attributedText = attributedText else { return nil }
-        
-        // Storage class stores the string, obviously
-        let textStorage: NSTextStorage = NSTextStorage(attributedString: attributedText)
-        
-        // The storage class owns a layout manager
-        let layoutManager: NSLayoutManager = NSLayoutManager()
-        textStorage.addLayoutManager(layoutManager)
-        
-        // Layout manager owns a container which basically
-        // defines the bounds the text should be contained in
-        let textContainer: NSTextContainer = NSTextContainer(size: bounds.size)
-        // For labels the fragment padding should be 0
-        textContainer.lineFragmentPadding = 0
-        
-        layoutManager.addTextContainer(textContainer)
-        
-        // Begin computation of actual frame
-        // Glyph is the final display representation
-        // Eg: Ligatures have 2 characters but only 1 glyph.
-        var glyphRange = NSRange()
-        glyphRange = layoutManager.glyphRange(forCharacterRange: range, actualCharacterRange: &glyphRange)
-        
-        let glyphRect = layoutManager.boundingRect(forGlyphRange: glyphRange, in: textContainer)
-        
-        return glyphRect
+        print("\(sentenceRange.spanish)")
     }
 }

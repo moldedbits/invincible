@@ -137,9 +137,7 @@ final class PassageCoordinator: Coordinator {
         guard let dataManager = dataManager,
             let passage = passage
             else { return }
-        let passageViewController = PassageViewController(dataManager: dataManager, passage: passage) {
-            self.stop()
-        }
+        let passageViewController = PassageViewController(dataManager: dataManager, passage: passage)
         navigationController?.pushViewController(passageViewController, animated: true)
     }
     
