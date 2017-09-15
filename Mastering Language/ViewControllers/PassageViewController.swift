@@ -10,6 +10,9 @@ import UIKit
 
 class PassageViewController: UIViewController {
 
+    @IBOutlet weak var passageLabel: UILabel!
+    
+    init()
     override func viewDidLoad() {
     }
 }
