@@ -28,7 +28,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appCoordinator.start()
         
         let abc = DataManager()
-        abc.getCategories()
+        abc.getPassages()
+            .then { categories  in
+                print(categories)
+        }
+            .catch { error in
+                print(error.localizedDescription)
+        }
+                
 
         return true
     }

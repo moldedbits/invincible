@@ -8,28 +8,51 @@
 
 import Foundation
 import FirebaseDatabase
+import PromiseKit
+
+enum MLError: Error {
+    case decodingFailed(reason: String)
+    case unknown(reason: String)
+}
 
 class DataManager {
-    
-   
-    
     private var databaseReference: DatabaseReference!
     
     init() {
         databaseReference = Database.database().reference()
     }
     
-    func getCategories() {
-        databaseReference.child("categories").observeSingleEvent(of: .value) { snapshot in
-            guard let values = snapshot.value as? [String: Any] else {
-                return
+    func getCategories() -> Promise<[Category]> {
+        return Promise { fulfill, reject in
+            databaseReference.child("categories").observeSingleEvent(of: .value) { snapshot in
+                guard let values = snapshot.value as? [String: Any] else {
+                    reject(MLError.decodingFailed(reason: "Decoding failed"))
+                    return
+                }
+                var categories = [Category]()
+                for (key, value) in values {
+                    guard let category = Category(key: key, value: value) else { continue }
+                    categories.append(category)
+                }
+                fulfill(categories)
             }
-            var categories = [Category]()
-            for (key, value) in values{
-                guard let category = Category(key: key, value: value) else { continue }
-                categories.append(category)
+        }
+    }
+    
+    func getPassages() -> Promise<[Passage]> {
+        return Promise { fulfill, reject in
+            databaseReference.child("passages").observeSingleEvent(of: .value) { snapshot in
+                guard let values = snapshot.value as? [String: Any] else {
+                    reject(MLError.decodingFailed(reason: "Decoding failed"))
+                    return
+                }
+                var passages = [Passage]()
+                for (key, value) in values {
+                    guard let passage = Passage(key: key, value: value) else { continue }
+                    passages.append(passage)
+                }
+                fulfill(passages)
             }
-            print(categories)
         }
     }
     
@@ -50,7 +73,7 @@ struct Category: Codable {
             else { return nil }
         self.key = key
         for (key, value) in passages {
-            guard let passage = Passage.init(key: key, values: value) else { continue }
+            guard let passage = Passage.init(key: key, value: value) else { continue }
             self.passages.append(passage)
         }
     }
@@ -62,13 +85,21 @@ struct Passage: Codable {
     var displayName: Text?
     var difficulty: String?
     var passageText: Text?
+    var question = [Question]()
     
-    init?(key: String, values: Any) {
-        guard let values = values as? [String: Any] else { return nil }
+    init?(key: String, value: Any) {
+        guard let value = value as? [String: Any] else { return nil }
         self.key = key
-        self.displayName = Text(values: values[Key.displayName.stringValue])
-        self.difficulty = values[Key.difficulty.stringValue] as? String
-        self.passageText = Text(values: values[Key.passageText.stringValue])
+        self.displayName = Text(value: value[Key.displayName.stringValue])
+        self.difficulty = value[Key.difficulty.stringValue] as? String
+        self.passageText = Text(value: value[Key.passageText.stringValue])
+        
+        if let questions = value[Key.questions.stringValue] as? [Any] {
+            for value in questions {
+                guard let question = Question(value: value) else { continue }
+                self.question.append(question)
+            }
+        }
     }
     
     enum Key: String, CodingKey {
@@ -76,6 +107,7 @@ struct Passage: Codable {
         case displayName = "display_name"
         case difficulty
         case passageText = "passage_text"
+        case questions
     }
 }
 
@@ -83,15 +115,39 @@ struct Text: Codable {
     var spanish: String?
     var english: String?
     
-    init?(values: Any?) {
-        guard let values = values as? [String: Any] else { return nil }
-        self.english = values[Key.english.stringValue] as? String
-        self.spanish = values[Key.spanish.stringValue] as? String
+    init?(value: Any?) {
+        guard let value = value as? [String: Any] else { return nil }
+        self.english = value[Key.english.stringValue] as? String
+        self.spanish = value[Key.spanish.stringValue] as? String
     }
     
     enum Key: String, CodingKey {
         case english
         case spanish
+    }
+}
+
+enum QuestionType: String, Codable {
+    case freeText = "free_text"
+    case multipleChoice = "multiple_choice"
+}
+
+struct Question: Codable {
+    var type: QuestionType?
+    var text: Text?
+    var options: [String]
+    
+    init?(value: Any?) {
+        guard let value = value as? [String: Any] else { return nil }
+        self.type = QuestionType(rawValue: value[Key.type.stringValue] as? String ?? "")
+        self.text = Text(value: value[Key.text.stringValue])
+        self.options = value[Key.options.stringValue] as? [String] ?? []
+    }
+    
+    enum Key: String, CodingKey {
+        case type
+        case text = "question_text"
+        case options = "options"
     }
 }
 
