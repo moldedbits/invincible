@@ -14,8 +14,6 @@ import GoogleSignIn
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var dataManager = DataManager()
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Configure firebase
@@ -25,19 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         
-        let appCoordinator = AppCoordinator(window: self.window, dataManager: dataManager)
+        let appCoordinator = AppCoordinator(window: self.window)
         appCoordinator.start()
         
-        let abc = DataManager()
-        abc.getPassages()
-            .then { categories  in
-                print(categories)
-        }
-            .catch { error in
-                print(error.localizedDescription)
-        }
-                
-
         return true
     }
 

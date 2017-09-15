@@ -13,16 +13,15 @@ class PassageViewController: UIViewController {
     //Mark:- Properties
     var dataManager: DataManager?
     
-    
-    //Mark:- View Life Cycle
-    override func viewDidLoad() {
-        
-    }
-    
     //Mark:- Initialiser
     convenience init(dataManager: DataManager) {
         self.init()
         
         self.dataManager = dataManager
+    }
+    
+    //Mark:- View Life Cycle
+    override func viewDidLoad() {
+        
     }
 }

@@ -27,7 +27,7 @@ class CategoriesViewController: UIViewController {
     }
     
     //Mark:- Initialiser
-    convenience init(dataManager: DataManager, categoryTapped: @escaping (() -> ())) {
+    convenience init(dataManager: DataManager?, categoryTapped: @escaping (() -> ())) {
         self.init()
         
         self.dataManager = dataManager
@@ -40,7 +40,13 @@ class CategoriesViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Categories"
-        
+        dataManager?.getCategories()
+            .then { categories in
+                print(categories)
+        }
+            .catch { error in
+                print(error.localizedDescription)
+        }
     }
 }
 

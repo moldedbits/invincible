@@ -13,6 +13,7 @@ import Firebase
 final class AppCoordinator: Coordinator {
     
     func start() {
+        dataManager = DataManager()
         childCoordinators = []
         Auth.auth().addStateDidChangeListener { (auth, user) in
             self.changeViewStateWithUser()
@@ -35,6 +36,7 @@ final class AppCoordinator: Coordinator {
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         let categoriesCoordinator = CategoriesCoordinator(navController: navigationController, parentCoordinator: self, dataManager: dataManager)
+        
         childCoordinators.append(categoriesCoordinator)
         categoriesCoordinator.start()
     }
@@ -77,13 +79,13 @@ final class CategoriesCoordinator: Coordinator {
     var parentCoordinator: AppCoordinator?
     
     convenience init(navController: UINavigationController, parentCoordinator: AppCoordinator, dataManager: DataManager?) {
-        self.init(navigationController: navController)
+        self.init(navigationController: navController, dataManager: dataManager)
         
         self.parentCoordinator = parentCoordinator
+        
     }
     
     func start() {
-        guard let dataManager = dataManager else { return }
         let categoriesViewController = CategoriesViewController.init(dataManager: dataManager) {
             self.stop()
         }
@@ -118,7 +120,7 @@ struct Helper {
     static func createNavigationController() -> UINavigationController {
         let navigationController = UINavigationController()
         UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().barTintColor = UIColor.blue
+        UINavigationBar.appearance().barTintColor = UIColor.lightGray
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         
         return navigationController
