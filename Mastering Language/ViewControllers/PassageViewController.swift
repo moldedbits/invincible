@@ -9,7 +9,6 @@
 import UIKit
 
 class PassageViewController: UIViewController {
-
     @IBOutlet weak var passageLabel: UILabel!
     
     private var dataManager: DataManager!
@@ -21,5 +20,6 @@ class PassageViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        
     }
 }
