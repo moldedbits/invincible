@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="339" id="KGk-i7-Jjw" userLabel="PassagesTableViewCell" customClass="PassagesTableViewCell" customModule="Mastering_Language" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="339"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="338.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIz-qP-wwi" userLabel="PassageName">
+                        <rect key="frame" x="10" y="10" width="300" height="129"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JL5-pc-mp8" userLabel="PassageLines">
+                        <rect key="frame" x="10" y="159" width="300" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="JL5-pc-mp8" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="BWu-sy-al8"/>
+                    <constraint firstItem="JL5-pc-mp8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Kln-W1-t5u"/>
+                    <constraint firstAttribute="trailing" secondItem="nIz-qP-wwi" secondAttribute="trailing" constant="10" id="Kzw-ve-RIX"/>
+                    <constraint firstItem="nIz-qP-wwi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Ufe-BY-9cS"/>
+                    <constraint firstAttribute="trailing" secondItem="JL5-pc-mp8" secondAttribute="trailing" constant="10" id="VKI-jE-o09"/>
+                    <constraint firstItem="JL5-pc-mp8" firstAttribute="top" secondItem="nIz-qP-wwi" secondAttribute="bottom" constant="20" id="iYm-yh-Yc0"/>
+                    <constraint firstItem="nIz-qP-wwi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="rSo-hw-qbv"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="passageLines" destination="JL5-pc-mp8" id="iXi-ry-Hvy"/>
+                <outlet property="passageName" destination="nIz-qP-wwi" id="nNB-g7-5ZF"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="74.5"/>
+        </tableViewCell>
+    </objects>
+</document>
