@@ -13,9 +13,8 @@ import Firebase
 final class AppCoordinator: Coordinator {
     
     func start() {
+        dataManager = DataManager()
         childCoordinators = []
-        //changeViewStateWithUser()
-        
         Auth.auth().addStateDidChangeListener { (auth, user) in
             self.changeViewStateWithUser()
         }
@@ -36,7 +35,8 @@ final class AppCoordinator: Coordinator {
         let navigationController = Helper.createNavigationController()
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-        let categoriesCoordinator = CategoriesCoordinator(navController: navigationController, parentCoordinator: self)
+        let categoriesCoordinator = CategoriesCoordinator(navController: navigationController, parentCoordinator: self, dataManager: dataManager)
+        
         childCoordinators.append(categoriesCoordinator)
         categoriesCoordinator.start()
     }
@@ -78,17 +78,47 @@ final class LoginCoordinator: Coordinator {
 final class CategoriesCoordinator: Coordinator {
     var parentCoordinator: AppCoordinator?
     
-    convenience init(navController: UINavigationController, parentCoordinator: AppCoordinator) {
-        self.init(navigationController: navController)
+    convenience init(navController: UINavigationController, parentCoordinator: AppCoordinator, dataManager: DataManager?) {
+        self.init(navigationController: navController, dataManager: dataManager)
         
         self.parentCoordinator = parentCoordinator
+        
     }
     
     func start() {
-        let categoriesViewController = CategoriesViewController()
+        let categoriesViewController = CategoriesViewController.init(dataManager: dataManager) { category in
+            self.stop(selectedCategory: category)
+        }
         navigationController?.viewControllers = [QuizViewController()]
     }
+    
+    func stop(selectedCategory: Category) {
+        let passageCoordinator = PassageCoordinator(navController: navigationController, parentCoordinator: parentCoordinator, dataManager: dataManager, passage: selectedCategory.passages.first)
+        childCoordinators.append(contentsOf: [passageCoordinator])
+        passageCoordinator.start()
+    }
 }
+
+final class PassageCoordinator: Coordinator {
+    var parentCoordinator: AppCoordinator?
+    var passage: Passage?
+    
+    convenience init(navController: UINavigationController?, parentCoordinator: AppCoordinator?, dataManager: DataManager?, passage: Passage?) {
+        self.init(navigationController: navController, dataManager: dataManager)
+        
+        self.parentCoordinator = parentCoordinator
+        self.passage = passage
+    }
+    
+    func start() {
+        guard let dataManager = dataManager,
+            let passage = passage
+            else { return }
+        let passageViewController = PassageViewController(dataManager: dataManager, passage: passage)
+        navigationController?.pushViewController(passageViewController, animated: true)
+    }
+}
+
 
 struct Helper {
     static func createNavigationController() -> UINavigationController {
@@ -100,3 +130,4 @@ struct Helper {
         return navigationController
     }
 }
+
