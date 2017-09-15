@@ -9,18 +9,18 @@
 import UIKit
 
 class PassageViewController: UIViewController {
+    @IBOutlet weak var passageLabel: UILabel!
     
-    //Mark:- Properties
-    var dataManager: DataManager?
+    private var dataManager: DataManager?
+    private var passage: Passage?
     
-    //Mark:- Initialiser
-    convenience init(dataManager: DataManager, quizButtonTapped: (() -> (()) )) {
+    convenience init(dataManager: DataManager?, passage: Passage) {
         self.init()
         
         self.dataManager = dataManager
+        self.passage = passage
     }
     
-    //Mark:- View Life Cycle
     override func viewDidLoad() {
         
     }
