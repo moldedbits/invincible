@@ -15,10 +15,12 @@ class OptionTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        selectionStyle = .none
     }
     
     func configure(optionText: String, isSelected: Bool) {
         optionAnswerLabel.text = optionText
+        optionImageView.isHidden = !isSelected
     }
 }
