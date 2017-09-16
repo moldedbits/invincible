@@ -15,6 +15,6 @@ class CategoriesTableViewCell: UITableViewCell {
     
     func configure(with category: Category) {
         separatorInset = UIEdgeInsets.zero
-        categoryNameLabel.text = category.key
+        categoryNameLabel.text = category.key.capitalized
     }
 }

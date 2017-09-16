@@ -16,12 +16,14 @@ class CategoriesViewController: AMWaveViewController {
     private var categoryTapped: ((Category) -> ())?
     private var dataManager: DataManager?
     fileprivate var categories = [Category]()
-    private let images = [#imageLiteral(resourceName: "image1"), #imageLiteral(resourceName: "image2"), #imageLiteral(resourceName: "image9"), #imageLiteral(resourceName: "image4"),#imageLiteral(resourceName: "image5"),#imageLiteral(resourceName: "image6"),#imageLiteral(resourceName: "image7"),#imageLiteral(resourceName: "image8")]
+    private let images = [#imageLiteral(resourceName: "image1"), #imageLiteral(resourceName: "image2"), #imageLiteral(resourceName: "image9"),#imageLiteral(resourceName: "image3"), #imageLiteral(resourceName: "image4"),#imageLiteral(resourceName: "image5"),#imageLiteral(resourceName: "image6"),#imageLiteral(resourceName: "image7"),#imageLiteral(resourceName: "image8")]
+    
+    
     
     //Mark:- IBOutlets
     @IBOutlet weak var pagerView: FSPagerView! {
         didSet {
-            pagerView.automaticSlidingInterval = 4.0
+            pagerView.automaticSlidingInterval = 3.0
             pagerView.isInfinite = true
             pagerView.transformer = FSPagerViewTransformer(type: .cubic)
             pagerView.delegate = self

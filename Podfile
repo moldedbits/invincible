@@ -15,6 +15,7 @@ target 'Mastering Language' do
   pod 'AMWaveTransition'
   pod 'FSPagerView'
   pod 'XLPagerTabStrip', '~> 7.0'
+  pod 'Chameleon'
   
   target 'Mastering LanguageTests' do
     inherit! :search_paths
