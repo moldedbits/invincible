@@ -8,10 +8,12 @@
 
 import Foundation
 import FirebaseDatabase
+import Firebase
 import PromiseKit
 
 enum MLError: Error {
     case decodingFailed(reason: String)
+    case unauthorize(reason: String)
     case unknown(reason: String)
 }
 enum DatabaseKey:String {
@@ -65,11 +67,54 @@ class DataManager {
                 guard let value = snapshot.value,
                     let passage = Passage(key: key, value: value)
                     else {
-                    reject(MLError.decodingFailed(reason: "Decoding failed"))
-                    return
+                        reject(MLError.decodingFailed(reason: "Decoding failed"))
+                        return
                 }
                 
                 fulfill(passage)
+            }
+        }
+    }
+    
+    func saveAnswers(answer: [[String: Any]], passage: Passage) -> Promise<Void> {
+        return Promise { fulfill, reject in
+            guard let uid = Auth.auth().currentUser?.uid else {
+                reject(MLError.unauthorize(reason: "User now available"))
+                return
+            }
+            
+            databaseReference.child("users").child(uid).setValue([passage.key: answer]) { error, ref in
+                guard let error = error else {
+                    fulfill(())
+                    return
+                }
+                reject(error)
+            }
+        }
+    }
+    
+    func getAnswers(passage: Passage) -> Promise<[Answer]> {
+        return Promise { fulfill, reject in
+            guard let uid = Auth.auth().currentUser?.uid else {
+                reject(MLError.unauthorize(reason: "User now available"))
+                return
+            }
+            
+            databaseReference.child("users").child(uid).child(passage.key).observeSingleEvent(of: .value) { snapshot in
+                guard let values = snapshot.value as? [Any]
+                    else {
+                        reject(MLError.decodingFailed(reason: "Decoding failed"))
+                        return
+                    }
+                
+                var answers = [Answer]()
+                for value in values {
+                    guard let answer = Answer(value: value) else { continue }
+                    answers.append(answer)
+                }
+                
+                fulfill(answers)
+                return
             }
         }
     }
@@ -175,6 +220,22 @@ struct Question: Codable {
         case type
         case text = "question_text"
         case options = "options"
+    }
+}
+
+struct Answer: Codable {
+    var question: Text?
+    var answer: String?
+    
+    init?(value: Any?) {
+        guard let value = value as? [String: Any] else { return nil }
+        self.question = Text(value: value[Key.question.stringValue])
+        self.answer = value[Key.answer.stringValue] as? String
+    }
+    
+    enum Key: String, CodingKey {
+        case question
+        case answer
     }
 }
 
