@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import Firebase
-import ChameleonFramework
 
 final class AppCoordinator: Coordinator {
     
@@ -33,7 +32,6 @@ final class AppCoordinator: Coordinator {
     }
     
     func startCategoriesCoordinator() {
-        Chameleon.setGlobalThemeUsingPrimaryColor(UIColor.flatBlue, with: .contrast)
         let navigationController = Helper.createNavigationController()
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
@@ -173,9 +171,9 @@ final class QuizCoordinator: Coordinator {
 struct Helper {
     static func createNavigationController() -> UINavigationController {
         let navigationController = UINavigationController()
-        UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().barTintColor = UIColor.lightGray
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+//        UINavigationBar.appearance().tintColor = UIColor.white
+//        UINavigationBar.appearance().barTintColor = UIColor.lightGray
+//        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         
         return navigationController
     }

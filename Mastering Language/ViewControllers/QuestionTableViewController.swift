@@ -46,6 +46,7 @@ class QuestionTableViewController: UITableViewController {
         tableView.register(FreeTextTableViewCell.nib(), forCellReuseIdentifier: String(describing: FreeTextTableViewCell.self))
         tableView.register(OptionTableViewCell.nib(), forCellReuseIdentifier: String(describing: OptionTableViewCell.self))
         tableView.tableFooterView = UIView()
+        tableView.keyboardDismissMode = .onDrag
     }
     
     func setAnswer(answer: String) {

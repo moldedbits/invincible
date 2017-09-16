@@ -26,7 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let appCoordinator = AppCoordinator(window: self.window)
         appCoordinator.start()
-        
+      
+        Chameleon.setGlobalThemeUsingPrimaryColor(UIColor.flatPowderBlueDark, withSecondaryColor: UIColor.flatPowderBlue, andContentStyle: .contrast)
         return true
     }
     

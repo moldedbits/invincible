@@ -57,13 +57,23 @@ class CategoriesViewController: AMWaveViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Categories"
-        self.navigationController?.hidesNavigationBarHairline = true
-        if #available(iOS 11.0, *) {
-            navigationItem.largeTitleDisplayMode = .always
-        } else {
-            // Fallback on earlier versions
-        }
+        setupNavigationBar()
+        loadCategories()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        interactive.attachInteractiveGesture(to: self.navigationController!)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        interactive.detachInteractiveGesture()
+    }
+    
+    private func loadCategories() {
         HUD.show(.progress)
         HUD.dimsBackground = true
         dataManager?.getCategories()
@@ -79,16 +89,14 @@ class CategoriesViewController: AMWaveViewController {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        interactive.attachInteractiveGesture(to: self.navigationController!)
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        interactive.detachInteractiveGesture()
+    fileprivate func setupNavigationBar() {
+        title = "Categories"
+        self.navigationController?.hidesNavigationBarHairline = true
+        if #available(iOS 11.0, *) {
+            navigationItem.largeTitleDisplayMode = .always
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     override func visibleCells() -> [Any]! {
