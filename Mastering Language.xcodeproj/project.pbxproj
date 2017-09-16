@@ -11,7 +11,7 @@
 		0948C95D1F6C585500B4AF90 /* TranslatedTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0948C95B1F6C585500B4AF90 /* TranslatedTextViewController.xib */; };
 		09A75C591F6B0235002472C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A75C581F6B0235002472C7 /* AppDelegate.swift */; };
 		09A75C5E1F6B0235002472C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09A75C5C1F6B0235002472C7 /* Main.storyboard */; };
-		09A75C601F6B0235002472C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09A75C5F1F6B0235002472C7 /* Assets.xcassets */; };
+        09A75C601F6B0235002472C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09A75C5F1F6B0235002472C7 /* Assets.xcassets */; };
 		09A75C631F6B0235002472C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09A75C611F6B0235002472C7 /* LaunchScreen.storyboard */; };
 		09A75C6E1F6B0235002472C7 /* Mastering_LanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A75C6D1F6B0235002472C7 /* Mastering_LanguageTests.swift */; };
 		09A75C791F6B0236002472C7 /* Mastering_LanguageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A75C781F6B0236002472C7 /* Mastering_LanguageUITests.swift */; };
@@ -71,7 +71,6 @@
 		09A75C551F6B0235002472C7 /* Mastering Language.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mastering Language.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09A75C581F6B0235002472C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09A75C5D1F6B0235002472C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		09A75C5F1F6B0235002472C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09A75C621F6B0235002472C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09A75C641F6B0235002472C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09A75C691F6B0235002472C7 /* Mastering LanguageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mastering LanguageTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,7 +189,6 @@
 				1C90BE041F6B0FE400E85221 /* Coordinators */,
 				09A75C581F6B0235002472C7 /* AppDelegate.swift */,
 				09A75C5C1F6B0235002472C7 /* Main.storyboard */,
-				09A75C5F1F6B0235002472C7 /* Assets.xcassets */,
 				09A75C611F6B0235002472C7 /* LaunchScreen.storyboard */,
 				09A75C641F6B0235002472C7 /* Info.plist */,
 				09A75C861F6B02F7002472C7 /* GoogleService-Info.plist */,
@@ -450,7 +448,6 @@
 				09CCCC021F6B0D3E00E0B9B1 /* GoogleService-Info.plist in Resources */,
 				1C0DBD291F6BC811006ED28C /* PassageViewController.xib in Resources */,
 				22D61EF01F6BC66300D9F6BE /* QuizViewController.xib in Resources */,
-				09A75C601F6B0235002472C7 /* Assets.xcassets in Resources */,
 				09A75C5E1F6B0235002472C7 /* Main.storyboard in Resources */,
 				22D61EF81F6C1D2F00D9F6BE /* ObjectiveQuestionView.xib in Resources */,
 				22D61EFA1F6C1D4100D9F6BE /* SubjectiveQuestionView.xib in Resources */,
