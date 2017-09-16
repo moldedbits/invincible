@@ -47,6 +47,12 @@ class QuestionTableViewController: UITableViewController {
         tableView.register(OptionTableViewCell.nib(), forCellReuseIdentifier: String(describing: OptionTableViewCell.self))
         tableView.tableFooterView = UIView()
         tableView.keyboardDismissMode = .onDrag
+        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(handleTap(sender:)))
+        tableView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func handleTap(sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
     
     func setAnswer(answer: String) {
