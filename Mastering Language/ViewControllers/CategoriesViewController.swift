@@ -10,6 +10,7 @@ import UIKit
 import PKHUD
 import AMWaveTransition
 import FSPagerView
+import ChameleonFramework
 
 class CategoriesViewController: AMWaveViewController {
     
@@ -57,6 +58,7 @@ class CategoriesViewController: AMWaveViewController {
         super.viewDidLoad()
         
         title = "Categories"
+        self.navigationController?.hidesNavigationBarHairline = true
         if #available(iOS 11.0, *) {
             navigationItem.largeTitleDisplayMode = .always
         } else {

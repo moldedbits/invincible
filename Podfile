@@ -15,7 +15,7 @@ target 'Mastering Language' do
   pod 'AMWaveTransition'
   pod 'FSPagerView'
   pod 'XLPagerTabStrip', '~> 7.0'
-  pod 'Chameleon'
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   
   target 'Mastering LanguageTests' do
     inherit! :search_paths
