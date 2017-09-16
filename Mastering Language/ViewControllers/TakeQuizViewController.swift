@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import PKHUD
 import XLPagerTabStrip
 
 class TakeQuizViewController: TwitterPagerTabStripViewController {
@@ -27,14 +28,14 @@ class TakeQuizViewController: TwitterPagerTabStripViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        getAnswers()
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         
         var viewControllers = [UIViewController]()
         for (index, question) in passage.question.enumerated() {
-            let viewController = QuestionTableViewController(question: question, questionIndex: index)
+            let viewController = QuestionTableViewController(question: question, questionIndex: index, answer: "")
             viewControllers.append(viewController)
         }
         
@@ -45,6 +46,36 @@ class TakeQuizViewController: TwitterPagerTabStripViewController {
         
         return viewControllers
     }
+    
+    private func getAnswers() {
+        HUD.show(.progress)
+        dataManager?.getAnswers(passage: passage)
+            .then { answers in
+                self.updateUIForAnswers(answers: answers)
+            }
+            .always {
+                HUD.hide()
+            }
+            .catch { error in
+                print(error.localizedDescription)
+        }
+    }
+    
+    private func updateUIForAnswers(answers: [Answer]) {
+        for controller in viewControllers {
+            guard let controller = controller as? QuestionTableViewController else { continue }
+            guard let answer = answers.filter({ answer -> Bool in
+                guard let answerId = answer.question?.english,
+                    let questionId = controller.question.text?.english
+                    else { return false }
+                
+                return answerId == questionId
+            }).first else { continue }
+            
+            controller.setAnswer(answer: answer.answer ?? "")
+        }
+    }
+    
     
     @IBAction func submitButton(_ sender: UIButton) {
         var answers = [[String: Any]]()

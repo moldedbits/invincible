@@ -11,7 +11,7 @@ import XLPagerTabStrip
 
 class QuestionTableViewController: UITableViewController {
     
-    var question: Question!
+    
     private var questionIndex: Int = 0
     private var selectedOptionIndex: Int? {
         didSet {
@@ -20,9 +20,12 @@ class QuestionTableViewController: UITableViewController {
             }
         }
     }
+    private var dataManager: DataManager?
     var answer: String?
+    var question: Question!
     
-    convenience init(question: Question, questionIndex: Int, selectedOptionIndex: Int? = nil) {
+    
+    convenience init(question: Question, questionIndex: Int, answer: String) {
         self.init()
         
         self.question = question
@@ -42,6 +45,15 @@ class QuestionTableViewController: UITableViewController {
         tableView.register(FreeTextTableViewCell.nib(), forCellReuseIdentifier: String(describing: FreeTextTableViewCell.self))
         tableView.register(OptionTableViewCell.nib(), forCellReuseIdentifier: String(describing: OptionTableViewCell.self))
         tableView.tableFooterView = UIView()
+    }
+    
+    func setAnswer(answer: String) {
+        for (index, option) in question.options.enumerated() where option == answer {
+            selectedOptionIndex = index
+        }
+        
+        self.answer = answer
+        tableView.reloadData()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -65,6 +77,7 @@ class QuestionTableViewController: UITableViewController {
         case .freeText:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: FreeTextTableViewCell.self), for: indexPath) as! FreeTextTableViewCell
             cell.answerTextView.delegate = self
+            cell.answerTextView.text = answer ?? ""
             
             return cell
         case .multipleChoice:
