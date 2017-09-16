@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import ChameleonFramework
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
