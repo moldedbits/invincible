@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import AMWaveTransition
 
-class PassagesViewController: UIViewController {
+class PassagesViewController: AMWaveViewController {
     
     //Mark:- IBOutlets
     @IBOutlet weak var passagesTableView: UITableView! {
@@ -36,11 +37,30 @@ class PassagesViewController: UIViewController {
         
         self.selectedCategory = selectedCategory
         self.passageChoosed = passageChoosed
+        self.interactive = AMWaveTransition()
     }
     
     //Mark:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Passages"
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        interactive.attachInteractiveGesture(to: self.navigationController!)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        interactive.detachInteractiveGesture()
+    }
+    
+    override func visibleCells() -> [Any]! {
+        return passagesTableView.visibleCells
     }
 }
 
@@ -59,6 +79,7 @@ extension PassagesViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         guard let passage = selectedCategory?.passages[indexPath.row] else { return }
         passageChoosed?(passage)
     }

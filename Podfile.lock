@@ -1,4 +1,5 @@
 PODS:
+  - AMWaveTransition (0.6.2)
   - EasyTipView (1.0.2)
   - Firebase/Auth (4.1.1):
     - Firebase/Core
@@ -72,6 +73,7 @@ PODS:
     - PromiseKit/CorePromise
 
 DEPENDENCIES:
+  - AMWaveTransition
   - EasyTipView (~> 1.0.2)
   - Firebase/Auth
   - Firebase/Core
@@ -82,6 +84,7 @@ DEPENDENCIES:
   - PromiseKit (~> 4.4)
 
 SPEC CHECKSUMS:
+  AMWaveTransition: 98952310574779e4ca7e7f4d89f8b1043cdad171
   EasyTipView: b93a19be981cc2221d6d7191d49872f547e0bebf
   Firebase: 052c0de688fc87b414996eea13e223dd9fee3fa2
   FirebaseAnalytics: 76f754d37ca5b04f36856729b6af3ca0152d1069
@@ -100,6 +103,6 @@ SPEC CHECKSUMS:
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   PromiseKit: ecf5fe92275d57ee77c9ede858af47a162e9b97e
 
-PODFILE CHECKSUM: fc18c8676940318e9e31082fd8fbb7e884a81b8f
+PODFILE CHECKSUM: f36b2f168292a1fce730364a08b3f69d1abe935b
 
 COCOAPODS: 1.3.1

@@ -30,6 +30,8 @@
 		1C0DBD311F6C0298006ED28C /* PassagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C0DBD2F1F6C0298006ED28C /* PassagesTableViewCell.xib */; };
 		1C0DBD341F6C11AB006ED28C /* PassagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0DBD321F6C11AB006ED28C /* PassagesViewController.swift */; };
 		1C0DBD351F6C11AB006ED28C /* PassagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C0DBD331F6C11AB006ED28C /* PassagesViewController.xib */; };
+		1C8F92EC1F6CE20D00DADEE6 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8F92EA1F6CE20D00DADEE6 /* CarouselView.swift */; };
+		1C8F92ED1F6CE20D00DADEE6 /* CarouselView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C8F92EB1F6CE20D00DADEE6 /* CarouselView.xib */; };
 		1C90BE061F6B104600E85221 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C90BE051F6B104600E85221 /* Coordinator.swift */; };
 		1C90BE081F6B10E200E85221 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C90BE071F6B10E200E85221 /* AppCoordinator.swift */; };
 		1C90BE111F6B1A5300E85221 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C90BE0F1F6B1A5300E85221 /* CategoriesViewController.swift */; };
@@ -93,6 +95,8 @@
 		1C0DBD2F1F6C0298006ED28C /* PassagesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PassagesTableViewCell.xib; sourceTree = "<group>"; };
 		1C0DBD321F6C11AB006ED28C /* PassagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassagesViewController.swift; sourceTree = "<group>"; };
 		1C0DBD331F6C11AB006ED28C /* PassagesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PassagesViewController.xib; sourceTree = "<group>"; };
+		1C8F92EA1F6CE20D00DADEE6 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
+		1C8F92EB1F6CE20D00DADEE6 /* CarouselView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselView.xib; sourceTree = "<group>"; };
 		1C90BE051F6B104600E85221 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		1C90BE071F6B10E200E85221 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		1C90BE0F1F6B1A5300E85221 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 		09A75C571F6B0235002472C7 /* Mastering Language */ = {
 			isa = PBXGroup;
 			children = (
+				1C8F92E51F6CE0F300DADEE6 /* Views */,
 				1C0DBD2B1F6BCBAB006ED28C /* Category */,
 				1C0DBD201F6BC77A006ED28C /* TableViewCells */,
 				1C0DBD1D1F6BC734006ED28C /* Extensions */,
@@ -230,6 +235,8 @@
 				22D61EF91F6C1D4100D9F6BE /* SubjectiveQuestionView.xib */,
 				0948C95A1F6C585500B4AF90 /* TranslatedTextViewController.swift */,
 				0948C95B1F6C585500B4AF90 /* TranslatedTextViewController.xib */,
+				1C8F92EA1F6CE20D00DADEE6 /* CarouselView.swift */,
+				1C8F92EB1F6CE20D00DADEE6 /* CarouselView.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -267,6 +274,13 @@
 				1C0DBD2C1F6BCBC9006ED28C /* CategoryList.swift */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		1C8F92E51F6CE0F300DADEE6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		1C90BE041F6B0FE400E85221 /* Coordinators */ = {
@@ -440,6 +454,7 @@
 				09A75C5E1F6B0235002472C7 /* Main.storyboard in Resources */,
 				22D61EF81F6C1D2F00D9F6BE /* ObjectiveQuestionView.xib in Resources */,
 				22D61EFA1F6C1D4100D9F6BE /* SubjectiveQuestionView.xib in Resources */,
+				1C8F92ED1F6CE20D00DADEE6 /* CarouselView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,6 +614,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Mastering Language/Pods-Mastering Language-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AMWaveTransition/AMWaveTransition.framework",
 				"${BUILT_PRODUCTS_DIR}/EasyTipView/EasyTipView.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -612,6 +628,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AMWaveTransition.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasyTipView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
@@ -642,6 +659,7 @@
 				0948C95C1F6C585500B4AF90 /* TranslatedTextViewController.swift in Sources */,
 				22D61EEF1F6BC66300D9F6BE /* QuizViewController.swift in Sources */,
 				1C90BE081F6B10E200E85221 /* AppCoordinator.swift in Sources */,
+				1C8F92EC1F6CE20D00DADEE6 /* CarouselView.swift in Sources */,
 				09CCCC0A1F6B1E1D00E0B9B1 /* DataManager.swift in Sources */,
 				09A75C591F6B0235002472C7 /* AppDelegate.swift in Sources */,
 				1C0DBD341F6C11AB006ED28C /* PassagesViewController.swift in Sources */,
