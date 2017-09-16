@@ -28,6 +28,7 @@ PODS:
     - leveldb-library (~> 1.18)
   - FirebaseInstanceID (2.0.2):
     - FirebaseCore (~> 4.0)
+  - FSPagerView (0.6.1)
   - GoogleSignIn (4.1.0):
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GoogleToolboxForMac/NSString+URLArguments (~> 2.1)
@@ -79,6 +80,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - FSPagerView
   - GoogleSignIn
   - Koloda (~> 4.0)
   - PKHUD (~> 4.0)
@@ -94,6 +96,7 @@ SPEC CHECKSUMS:
   FirebaseCore: 28def3c643989c97ea5a69ea5000f5fa9902b9fd
   FirebaseDatabase: 4d1a10639a42cae26e094296951b53c689e5e191
   FirebaseInstanceID: c4c7fca62c7b7330caee5da04f19a37ea37bb1c1
+  FSPagerView: c6cc8f66a5000ca8bb4c9c7b7168626d95c9bda6
   GoogleSignIn: 8c599fc10d25b2af86a3f82fd9631e863f2b1400
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: be83fd28d63ae3087e7d351b1f39c1a7e24ab6e7

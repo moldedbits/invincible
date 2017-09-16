@@ -9,14 +9,26 @@
 import UIKit
 import PKHUD
 import AMWaveTransition
+import FSPagerView
 
 class CategoriesViewController: AMWaveViewController {
     
     private var categoryTapped: ((Category) -> ())?
     private var dataManager: DataManager?
     fileprivate var categories = [Category]()
+    private let images = [#imageLiteral(resourceName: "image1"), #imageLiteral(resourceName: "image2"), #imageLiteral(resourceName: "image9"), #imageLiteral(resourceName: "image4"),#imageLiteral(resourceName: "image5"),#imageLiteral(resourceName: "image6"),#imageLiteral(resourceName: "image7"),#imageLiteral(resourceName: "image8")]
     
     //Mark:- IBOutlets
+    @IBOutlet weak var pagerView: FSPagerView! {
+        didSet {
+            pagerView.automaticSlidingInterval = 4.0
+            pagerView.isInfinite = true
+            pagerView.transformer = FSPagerViewTransformer(type: .cubic)
+            pagerView.delegate = self
+            pagerView.dataSource = self
+            self.pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
+        }
+    }
     @IBOutlet weak var categoryTableView: UITableView! {
         didSet {
             categoryTableView.dataSource = self
@@ -100,6 +112,22 @@ extension CategoriesViewController: UITableViewDataSource, UITableViewDelegate {
         let category = categories[indexPath.row]
         categoryTapped?(category)
         
+    }
+}
+
+extension CategoriesViewController: FSPagerViewDelegate, FSPagerViewDataSource {
+    
+    public func numberOfItems(in pagerView: FSPagerView) -> Int {
+        return images.count
+    }
+    
+    public func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
+        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
+        cell.imageView?.image = images[index]
+        cell.imageView?.contentMode = .scaleAspectFill
+    
+        
+        return cell
     }
 }
 
