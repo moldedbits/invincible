@@ -8,6 +8,7 @@
 
 import Foundation
 import FirebaseDatabase
+import Firebase
 import PromiseKit
 
 enum MLError: Error {
@@ -65,11 +66,28 @@ class DataManager {
                 guard let value = snapshot.value,
                     let passage = Passage(key: key, value: value)
                     else {
-                    reject(MLError.decodingFailed(reason: "Decoding failed"))
-                    return
+                        reject(MLError.decodingFailed(reason: "Decoding failed"))
+                        return
                 }
                 
                 fulfill(passage)
+            }
+        }
+    }
+    
+    func saveAnswers(answer: [[String: Any]], passage: Passage) -> Promise<Void> {
+        return Promise { fulfill, reject in
+            guard let uid = Auth.auth().currentUser?.uid else {
+                reject(MLError.unknown(reason: "User now available"))
+                return
+            }
+            
+            databaseReference.child("users").child(uid).setValue([passage.key: answer]) { error, ref in
+                guard let error = error else {
+                    fulfill(())
+                    return
+                }
+                reject(error)
             }
         }
     }

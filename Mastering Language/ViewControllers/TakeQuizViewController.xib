@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TakeQuizViewController" customModule="Mastering_Language" customModuleProvider="target">
             <connections>
                 <outlet property="containerView" destination="ct9-2P-4GH" id="iyc-Yp-VlA"/>
+                <outlet property="submitButton" destination="HmH-3Y-9tL" id="5jY-uJ-UrQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,6 +31,9 @@
                         <constraint firstAttribute="height" constant="50" id="38w-my-9rC"/>
                     </constraints>
                     <state key="normal" title="Submit"/>
+                    <connections>
+                        <action selector="submitButton:" destination="-1" eventType="touchUpInside" id="CRE-S0-spV"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

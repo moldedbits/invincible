@@ -162,7 +162,8 @@ final class QuizCoordinator: Coordinator {
     }
     
     func start() {
-        let quizViewController = TakeQuizViewController.init(passage: passage)
+        guard let dataManager = dataManager else { return }
+        let quizViewController = TakeQuizViewController(dataManager: dataManager, passage: passage)
         navigationController?.pushViewController(quizViewController, animated: true)
     }
 }

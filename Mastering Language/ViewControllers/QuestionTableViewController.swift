@@ -11,9 +11,16 @@ import XLPagerTabStrip
 
 class QuestionTableViewController: UITableViewController {
     
-    private var question: Question!
+    var question: Question!
     private var questionIndex: Int = 0
-    private var selectedOptionIndex: Int?
+    private var selectedOptionIndex: Int? {
+        didSet {
+            if let selectedOption = selectedOptionIndex {
+                answer = question.options[selectedOption]
+            }
+        }
+    }
+    var answer: String?
     
     convenience init(question: Question, questionIndex: Int, selectedOptionIndex: Int? = nil) {
         self.init()
@@ -57,6 +64,7 @@ class QuestionTableViewController: UITableViewController {
         switch question?.type ?? .freeText {
         case .freeText:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: FreeTextTableViewCell.self), for: indexPath) as! FreeTextTableViewCell
+            cell.answerTextView.delegate = self
             
             return cell
         case .multipleChoice:
@@ -67,7 +75,6 @@ class QuestionTableViewController: UITableViewController {
             if let selectedOption = selectedOptionIndex, (indexPath.row - 1) == selectedOption {
                 isSelected = true
             }
-            
             cell.configure(optionText: option, isSelected: isSelected)
             
             return cell
@@ -78,6 +85,12 @@ class QuestionTableViewController: UITableViewController {
         if (question.type ?? .freeText) == .freeText, indexPath.row > 0 { return }
         selectedOptionIndex = indexPath.row - 1
         tableView.reloadData()
+    }
+}
+
+extension QuestionTableViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        answer = textView.text
     }
 }
 
