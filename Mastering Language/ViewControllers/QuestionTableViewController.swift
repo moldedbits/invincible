@@ -73,6 +73,12 @@ class QuestionTableViewController: UITableViewController {
             return cell
         }
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (question.type ?? .freeText) == .freeText, indexPath.row > 0 { return }
+        selectedOptionIndex = indexPath.row - 1
+        tableView.reloadData()
+    }
 }
 
 extension QuestionTableViewController: IndicatorInfoProvider {
