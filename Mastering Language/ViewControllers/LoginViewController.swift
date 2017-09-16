@@ -28,6 +28,6 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     
     func setupGoogleSignIn() {
         GIDSignIn.sharedInstance().uiDelegate = self
-        GIDSignIn.sharedInstance().signIn()
+//        GIDSignIn.sharedInstance().signIn()
     }
 }
