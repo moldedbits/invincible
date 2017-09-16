@@ -35,7 +35,7 @@ class TakeQuizViewController: TwitterPagerTabStripViewController {
         
         var viewControllers = [UIViewController]()
         for (index, question) in passage.question.enumerated() {
-            let viewController = QuestionTableViewController(question: question, questionIndex: index, answer: "")
+            let viewController = QuestionTableViewController(question: question, questionIndex: index + 1, answer: "")
             viewControllers.append(viewController)
         }
         
