@@ -96,8 +96,11 @@ class TakeQuizViewController: TwitterPagerTabStripViewController {
     
     func submitAnswer(answers: [[String: Any]]) {
         dataManager?.saveAnswers(answer: answers, passage: passage)
-            .then {
+            .then { _ -> Void in
+                HUD.flash(.success)
                 print("answer submited")
+                
+                return
             }
             .catch { error in
                 print(error.localizedDescription)

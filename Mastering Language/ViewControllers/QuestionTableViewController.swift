@@ -100,9 +100,9 @@ class QuestionTableViewController: UITableViewController {
         selectedOptionIndex = indexPath.row - 1
         let option = question.options[indexPath.row - 1]
         if (question.answer?.spanish ?? "") == option || (question.answer?.english ?? "") == option {
-            HUD.show(.success)
+            HUD.flash(.success)
         } else {
-            HUD.show(.error)
+            HUD.flash(.error)
         }
         
         tableView.reloadData()
