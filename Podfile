@@ -12,7 +12,7 @@ target 'Mastering Language' do
   pod 'PKHUD', '~> 4.0'
   pod 'Koloda', '~> 4.0'
   pod 'EasyTipView', '~> 1.0.2'
-    
+  pod 'AMWaveTransition'
   target 'Mastering LanguageTests' do
     inherit! :search_paths
     # Pods for testing
