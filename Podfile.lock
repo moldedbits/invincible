@@ -71,6 +71,7 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (4.4.0):
     - PromiseKit/CorePromise
+  - XLPagerTabStrip (7.0.0)
 
 DEPENDENCIES:
   - AMWaveTransition
@@ -82,6 +83,7 @@ DEPENDENCIES:
   - Koloda (~> 4.0)
   - PKHUD (~> 4.0)
   - PromiseKit (~> 4.4)
+  - XLPagerTabStrip (~> 7.0)
 
 SPEC CHECKSUMS:
   AMWaveTransition: 98952310574779e4ca7e7f4d89f8b1043cdad171
@@ -102,7 +104,8 @@ SPEC CHECKSUMS:
   PKHUD: c7692163a09875cbf15827dc581df3c5cf7f1015
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   PromiseKit: ecf5fe92275d57ee77c9ede858af47a162e9b97e
+  XLPagerTabStrip: 9be80a66c6b7d60306b2c0a6004965016d68f813
 
-PODFILE CHECKSUM: f36b2f168292a1fce730364a08b3f69d1abe935b
+PODFILE CHECKSUM: 84aafb0bc40b5c0a68f4fc43f70f028c1a6e3143
 
 COCOAPODS: 1.3.1

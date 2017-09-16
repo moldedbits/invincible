@@ -13,6 +13,8 @@ target 'Mastering Language' do
   pod 'Koloda', '~> 4.0'
   pod 'EasyTipView', '~> 1.0.2'
   pod 'AMWaveTransition'
+  pod 'XLPagerTabStrip', '~> 7.0'
+  
   target 'Mastering LanguageTests' do
     inherit! :search_paths
     # Pods for testing
