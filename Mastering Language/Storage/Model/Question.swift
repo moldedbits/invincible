@@ -17,17 +17,20 @@ struct Question: Codable {
     var type: QuestionType?
     var text: Text?
     var options: [String]
+    var answer: Text?
     
     init?(value: Any?) {
         guard let value = value as? [String: Any] else { return nil }
         self.type = QuestionType(rawValue: value[Key.type.stringValue] as? String ?? "")
         self.text = Text(value: value[Key.text.stringValue])
         self.options = value[Key.options.stringValue] as? [String] ?? []
+        self.answer = Text(value: value[Key.answer.stringValue])
     }
     
     enum Key: String, CodingKey {
         case type
         case text = "question_text"
         case options = "options"
+        case answer = "answer_text"
     }
 }

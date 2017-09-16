@@ -8,6 +8,7 @@
 
 import UIKit
 import XLPagerTabStrip
+import PKHUD
 
 class QuestionTableViewController: UITableViewController {
     
@@ -97,6 +98,13 @@ class QuestionTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (question.type ?? .freeText) == .freeText, indexPath.row > 0 { return }
         selectedOptionIndex = indexPath.row - 1
+        let option = question.options[indexPath.row - 1]
+        if (question.answer?.spanish ?? "") == option || (question.answer?.english ?? "") == option {
+            HUD.show(.success)
+        } else {
+            HUD.show(.error)
+        }
+        
         tableView.reloadData()
     }
 }
