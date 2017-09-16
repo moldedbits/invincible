@@ -17,9 +17,7 @@ class CategoriesViewController: AMWaveViewController {
     private var categoryTapped: ((Category) -> ())?
     private var dataManager: DataManager?
     fileprivate var categories = [Category]()
-    private let images = [#imageLiteral(resourceName: "image1"), #imageLiteral(resourceName: "image2"), #imageLiteral(resourceName: "image9"),#imageLiteral(resourceName: "image3"), #imageLiteral(resourceName: "image4"),#imageLiteral(resourceName: "image5"),#imageLiteral(resourceName: "image6"),#imageLiteral(resourceName: "image7"),#imageLiteral(resourceName: "image8")]
-    
-    
+    private let images = [#imageLiteral(resourceName: "image1"),#imageLiteral(resourceName: "image3"), #imageLiteral(resourceName: "image9"), #imageLiteral(resourceName: "image4"),#imageLiteral(resourceName: "image5"),#imageLiteral(resourceName: "image6"),#imageLiteral(resourceName: "image7"),#imageLiteral(resourceName: "image8")]
     
     //Mark:- IBOutlets
     @IBOutlet weak var pagerView: FSPagerView! {
@@ -59,6 +57,7 @@ class CategoriesViewController: AMWaveViewController {
         
         setupNavigationBar()
         loadCategories()
+        categoryTableView.backgroundColor = GradientColor(.topToBottom, frame: view.frame, colors: [UIColor.flatPowderBlue, UIColor.flatPowderBlueDark, UIColor.flatBlue])
     }
     
     override func viewDidAppear(_ animated: Bool) {

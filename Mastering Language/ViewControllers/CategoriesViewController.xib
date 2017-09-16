@@ -23,9 +23,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vgb-SV-vFD" userLabel="categoryTableView">
-                    <rect key="frame" x="0.0" y="240" width="375" height="417"/>
+                    <rect key="frame" x="0.0" y="240" width="375" height="427"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="separatorColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QJ4-1d-eiS" customClass="FSPagerView" customModule="FSPagerView">
                     <rect key="frame" x="0.0" y="20" width="375" height="220"/>
@@ -40,7 +40,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QJ4-1d-eiS" secondAttribute="trailing" id="MHc-w5-Uop"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vgb-SV-vFD" secondAttribute="trailing" id="VSS-Lb-jec"/>
                 <constraint firstItem="QJ4-1d-eiS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ZPq-rH-enX"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="vgb-SV-vFD" secondAttribute="bottom" constant="10" id="dBu-8B-Drn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="vgb-SV-vFD" secondAttribute="bottom" id="dBu-8B-Drn"/>
                 <constraint firstItem="vgb-SV-vFD" firstAttribute="top" secondItem="QJ4-1d-eiS" secondAttribute="bottom" id="dO0-Y6-oiv"/>
                 <constraint firstItem="QJ4-1d-eiS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="qW3-9x-RQY"/>
                 <constraint firstItem="vgb-SV-vFD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wIz-BZ-Tsx"/>

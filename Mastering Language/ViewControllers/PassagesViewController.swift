@@ -8,6 +8,7 @@
 
 import UIKit
 import AMWaveTransition
+import ChameleonFramework
 
 class PassagesViewController: AMWaveViewController {
     
@@ -45,6 +46,7 @@ class PassagesViewController: AMWaveViewController {
         super.viewDidLoad()
         
         title = "Passages"
+        passagesTableView.backgroundColor = GradientColor(.topToBottom, frame: view.frame, colors: [UIColor.flatPowderBlue, UIColor.flatPowderBlueDark, UIColor.flatBlue])
     }
     
     override func viewDidAppear(_ animated: Bool) {

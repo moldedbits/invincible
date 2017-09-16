@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleSignIn
+import ChameleonFramework
 
 class LoginViewController: UIViewController, GIDSignInUIDelegate {
 
@@ -23,7 +24,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(gradientStyle: .topToBottom, withFrame: view.frame, andColors: [UIColor.flatBlue])
+        view.backgroundColor = GradientColor(.topToBottom, frame: view.frame, colors: [UIColor.flatPowderBlue, UIColor.flatSkyBlue, UIColor.flatBlue])
         setupGoogleSignIn()
     }
     
