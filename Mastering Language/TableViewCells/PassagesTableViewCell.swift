@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class PassagesTableViewCell: UITableViewCell {
 
@@ -14,6 +15,12 @@ class PassagesTableViewCell: UITableViewCell {
     @IBOutlet weak var passageName: UILabel!
     @IBOutlet weak var passageLines: UILabel!
     
+    override func layoutIfNeeded() {
+        super.layoutIfNeeded()
+        
+        contentView.backgroundColor = GradientColor(.leftToRight, frame: self.contentView.frame, colors: [UIColor.flatSkyBlue, UIColor.flatPowderBlueDark])
+    }
+
     func configure(with passage: Passage) {
         separatorInset = UIEdgeInsets.zero
         guard let passageDifficultyLevel = passage.difficulty else { return }
