@@ -7,11 +7,24 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class CategoriesTableViewCell: UITableViewCell {
     
     //Mark:- IBOutlets
     @IBOutlet weak var categoryNameLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        selectionStyle = .none
+    }
+    
+    override func layoutIfNeeded() {
+        super.layoutIfNeeded()
+        
+        contentView.backgroundColor = GradientColor(.leftToRight, frame: self.contentView.frame, colors: [UIColor.flatSkyBlue, UIColor.flatPowderBlueDark])
+    }
     
     func configure(with category: Category) {
         separatorInset = UIEdgeInsets.zero
