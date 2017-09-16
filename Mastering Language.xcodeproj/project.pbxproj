@@ -30,6 +30,11 @@
 		09F29DFF1F6D67AE00881C2D /* FreeTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F29DFD1F6D67AE00881C2D /* FreeTextTableViewCell.xib */; };
 		09F29E021F6D6DF900881C2D /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F29E001F6D6DF900881C2D /* EmptyViewController.swift */; };
 		09F29E031F6D6DF900881C2D /* EmptyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F29E011F6D6DF900881C2D /* EmptyViewController.xib */; };
+		09F29E051F6D8DEF00881C2D /* Passage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F29E041F6D8DEF00881C2D /* Passage.swift */; };
+		09F29E071F6D8E0600881C2D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F29E061F6D8E0600881C2D /* Category.swift */; };
+		09F29E091F6D8E1100881C2D /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F29E081F6D8E1100881C2D /* Answer.swift */; };
+		09F29E0B1F6D8E2600881C2D /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F29E0A1F6D8E2600881C2D /* Question.swift */; };
+		09F29E0D1F6D8E7700881C2D /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F29E0C1F6D8E7700881C2D /* Text.swift */; };
 		1B2571AA08E80DB2393D2467 /* Pods_Matering_LanguageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E957BC0F741C20F9DF9B35 /* Pods_Matering_LanguageTests.framework */; };
 		1C0DBD1F1F6BC762006ED28C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0DBD1E1F6BC762006ED28C /* UIView+Extension.swift */; };
 		1C0DBD231F6BC7AF006ED28C /* CategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0DBD211F6BC7AF006ED28C /* CategoriesTableViewCell.swift */; };
@@ -100,6 +105,11 @@
 		09F29DFD1F6D67AE00881C2D /* FreeTextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FreeTextTableViewCell.xib; sourceTree = "<group>"; };
 		09F29E001F6D6DF900881C2D /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
 		09F29E011F6D6DF900881C2D /* EmptyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyViewController.xib; sourceTree = "<group>"; };
+		09F29E041F6D8DEF00881C2D /* Passage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passage.swift; sourceTree = "<group>"; };
+		09F29E061F6D8E0600881C2D /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		09F29E081F6D8E1100881C2D /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		09F29E0A1F6D8E2600881C2D /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		09F29E0C1F6D8E7700881C2D /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		1C0DBD1E1F6BC762006ED28C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		1C0DBD211F6BC7AF006ED28C /* CategoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewCell.swift; sourceTree = "<group>"; };
 		1C0DBD221F6BC7AF006ED28C /* CategoriesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesTableViewCell.xib; sourceTree = "<group>"; };
@@ -250,6 +260,11 @@
 			isa = PBXGroup;
 			children = (
 				09CCCC091F6B1E1D00E0B9B1 /* DataManager.swift */,
+				09F29E0C1F6D8E7700881C2D /* Text.swift */,
+				09F29E0A1F6D8E2600881C2D /* Question.swift */,
+				09F29E081F6D8E1100881C2D /* Answer.swift */,
+				09F29E041F6D8DEF00881C2D /* Passage.swift */,
+				09F29E061F6D8E0600881C2D /* Category.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -662,14 +677,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09F29E051F6D8DEF00881C2D /* Passage.swift in Sources */,
 				09F29DF61F6D678600881C2D /* QuestionTableViewCell.swift in Sources */,
 				09CCCC061F6B12E800E0B9B1 /* LoginViewController.swift in Sources */,
 				1C0DBD231F6BC7AF006ED28C /* CategoriesTableViewCell.swift in Sources */,
 				1C0DBD1F1F6BC762006ED28C /* UIView+Extension.swift in Sources */,
+				09F29E091F6D8E1100881C2D /* Answer.swift in Sources */,
 				0948C95C1F6C585500B4AF90 /* TranslatedTextViewController.swift in Sources */,
 				1C90BE081F6B10E200E85221 /* AppCoordinator.swift in Sources */,
 				09F29DED1F6D64E200881C2D /* TakeQuizViewController.swift in Sources */,
 				09F29DF21F6D66E100881C2D /* QuestionTableViewController.swift in Sources */,
+				09F29E0D1F6D8E7700881C2D /* Text.swift in Sources */,
 				09CCCC0A1F6B1E1D00E0B9B1 /* DataManager.swift in Sources */,
 				09A75C591F6B0235002472C7 /* AppDelegate.swift in Sources */,
 				1C0DBD341F6C11AB006ED28C /* PassagesViewController.swift in Sources */,
@@ -678,9 +696,11 @@
 				09F29DFE1F6D67AE00881C2D /* FreeTextTableViewCell.swift in Sources */,
 				1C0DBD2D1F6BCBC9006ED28C /* CategoryList.swift in Sources */,
 				1C90BE061F6B104600E85221 /* Coordinator.swift in Sources */,
+				09F29E0B1F6D8E2600881C2D /* Question.swift in Sources */,
 				1C90BE111F6B1A5300E85221 /* CategoriesViewController.swift in Sources */,
 				09F29E021F6D6DF900881C2D /* EmptyViewController.swift in Sources */,
 				09F29DFA1F6D679E00881C2D /* OptionTableViewCell.swift in Sources */,
+				09F29E071F6D8E0600881C2D /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
